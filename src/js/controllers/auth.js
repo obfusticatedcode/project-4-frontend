@@ -1,7 +1,7 @@
 angular
-  .module('desireApp')
-  .controller('Register', Register)
-  .controller('Login', Login);
+.module('desireApp')
+.controller('Register', Register)
+.controller('Login', Login);
 
 Register.$inject = ['$auth', '$state'];
 function Register($auth, $state) {
@@ -10,8 +10,8 @@ function Register($auth, $state) {
 
   function submit() {
     $auth.signup(vm.user)
-      .then(() => $state.go('login'))
-      .catch(() => $state.go('register'));
+    .then(() => $state.go('login'))
+    .catch(() => $state.go('register'));
 
   }
 
@@ -25,9 +25,17 @@ function Login($auth, $state) {
 
   function submit() {
     $auth.login(vm.credentials)
-      .then(() => $state.go('productsIndex'))
-      .catch(() => $state.go('login'));
+    .then(() => $state.go('productsIndex'))
+    .catch(() => $state.go('login'));
   }
 
   vm.submit = submit;
+
+  function authenticate(provider) {
+    $auth.authenticate(provider)
+    .then(() => $state.go('productsIndex'))
+    .catch(() => $state.go('login'));
+  }
+
+  vm.authenticate = authenticate;
 }
