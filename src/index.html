@@ -1,19 +1,52 @@
 <!DOCTYPE html>
 <html ng-app="desireApp">
-  <head>
-    <meta charset="utf-8">
-    <title>Desire</title>
-    <!-- inject:js -->
-    <!-- endinject -->
-    <!-- inject:css -->
-    <!-- endinject -->
-  </head>
-  <body ng-controller="MainCtrl as main">
-    <ul>
-      <li ng-repeat="user in main.users">
-        <strong>{{ user.username }}</strong>
-        <p><em>{{ user.firstname }} {{ user.lastname }}</em></p>
-      </li>
-    </ul>
-  </body>
+<head>
+  <base href="/" >
+  <meta charset="utf-8">
+  <title>Desire</title>
+  <!-- inject:js -->
+  <!-- endinject -->
+  <!-- inject:css -->
+  <!-- endinject -->
+</head>
+<!-- TODO: make partials and keep the index fresh and clean -->
+<!-- header -->
+<header>
+  <nav>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" ng-click="isNavCollapsed = !isNavCollapsed">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Logo</a>
+    </div>
+    <div class="collapse navbar-collapse" uib-collapse="isNavCollapsed">
+      <ul class="nav navbar-nav">
+        <li><a ui-sref="productsIndex">Products</a></li>
+        <li><a ui-sref="productsNew">Add Product</a></li>
+        <li><a ui-sref="login">Login</a></li>
+        <li><a ui-sref="register">Register</a></li>
+        <li><a ui-sref="logout">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<body ng-controller="MainCtrl as main">
+
+  <ul>
+    <li ng-repeat="user in main.users">
+      <strong>{{ user.username }}</strong>
+      <p><em>{{ user.firstname }} {{ user.lastname }}</em></p>
+    </li>
+  </ul>
+
+  <!-- main -->
+  <main class="container" ui-view></main>
+
+  <!-- footer -->
+  <footer></footer>
+
+</body>
 </html>

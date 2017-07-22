@@ -15,6 +15,15 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "^1.5.8"
+    "angular": "^1.5.8",
+    "angular-ui-router": "^1.0.5",
+    "angular-bootstrap": "^2.5.0",
+    "bootstrap-css-only": "^3.3.7",
+    "angular-animate": "^1.6.5",
+    "angular-resource": "^1.6.5",
+    "satellizer": "^0.15.5"
+  },
+  "resolutions": {
+    "angular": "1.6.5"
   }
 }
