@@ -5,7 +5,7 @@ angular
 MainCtrl.$inject = ['$http', 'API_URL', '$rootScope', '$state', '$auth', '$transitions'];
 function MainCtrl($http, API_URL, $rootScope, $state, $auth, $transitions) {
   const vm = this;
-
+  vm.isNavCollapsed = true;
   //hide and show DOM elements based on authentication
   vm.isAuthenticated = $auth.isAuthenticated;
 
@@ -22,6 +22,7 @@ function MainCtrl($http, API_URL, $rootScope, $state, $auth, $transitions) {
     vm.pageName = transition.$to().name; // Storing the current state name as a string
     if(vm.stateHasChanged) vm.message = null;
     if(!vm.stateHasChanged) vm.stateHasChanged = true;
+    vm.isNavCollapsed = true;
     if($auth.getPayload()) vm.currentUserId = $auth.getPayload().userId;
   });
 
