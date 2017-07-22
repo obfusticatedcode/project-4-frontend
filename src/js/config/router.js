@@ -3,10 +3,10 @@ angular
   .config(Router);
 
 // Injecting the dependencies we need to ensure the file works after minification
-Router.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
+Router.$inject = ['$stateProvider', '$locationProvider'];
 
 // defining the router function to create our routes
-function Router($stateProvider, $urlRouterProvider, $locationProvider) {
+function Router($stateProvider, $locationProvider) {
   $locationProvider.html5Mode(true);
   //routes to be completed
   $stateProvider
@@ -32,9 +32,8 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/login',
       templateUrl: '/js/views/auth/login.html',
       controller: 'Login as login'
-
     });
 
-  $urlRouterProvider.otherwise('/login');
+    // removed $urlRouterProvider as it was causing a facebook login bug I'll catch the invalid routes another way
 
 }
