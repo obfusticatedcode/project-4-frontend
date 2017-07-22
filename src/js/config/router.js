@@ -25,6 +25,7 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
     .state('login', {
       url: '/login',
       templateUrl: '/js/views/auth/login.html'
+      
     });
 
   $urlRouterProvider.otherwise('/products');
