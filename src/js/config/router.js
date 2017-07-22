@@ -35,6 +35,6 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
 
     });
 
-  $urlRouterProvider.otherwise('/products');
+  $urlRouterProvider.otherwise('/login');
 
 }
