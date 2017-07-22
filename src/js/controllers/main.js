@@ -9,7 +9,7 @@ function MainCtrl($http, API_URL, $rootScope, $state, $auth, $transitions) {
   //hide and show DOM elements based on authentication
   vm.isAuthenticated = $auth.isAuthenticated;
 
-//
+
   $rootScope.$on('error', (e, err) => {
     vm.message = err.data.message;
     if(err.status === 401 && vm.pageName !== 'login') {

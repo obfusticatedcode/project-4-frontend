@@ -24,11 +24,11 @@
     </div>
     <div class="collapse navbar-collapse" uib-collapse="isNavCollapsed">
       <ul class="nav navbar-nav">
-        <li><a ui-sref="productsIndex">Products</a></li>
-        <li><a ui-sref="UsersShow({ id: main.currentUserId })" ng-if="main.isAuthenticated()">Profile</a></li>
-        <li><a ui-sref="productsNew">Add Product</a></li>
-        <li><a ui-sref="login">Login</a></li>
-        <li><a ui-sref="register">Register</a></li>
+        <li ng-if="main.isAuthenticated()"><a ui-sref="productsIndex">Products</a></li>
+        <li ng-if="main.isAuthenticated()"><a ui-sref="UsersShow({ id: main.currentUserId })" >Profile</a></li>
+        <li ng-if="main.isAuthenticated()"><a ui-sref="productsNew" >Add Product</a></li>
+        <li ng-if="!main.isAuthenticated()"><a ui-sref="login">Login</a></li>
+        <li ng-if="!main.isAuthenticated()"><a ui-sref="register">Register</a></li>
         <li><a ui-sref="logout" ng-click="main.logout()" ng-if="main.isAuthenticated()">Logout</a></li>
       </ul>
     </div>
@@ -37,8 +37,9 @@
 <body ng-controller="MainCtrl as main">
 
   <!-- main -->
-  <div class="message" ng-if="main.message">{{ main.message }}</div>
+  <div class="notification" ng-if="main.message">{{ main.message }}</div>
   <main class="container" ui-view></main>
+
 
   <!-- footer -->
   <footer></footer>
