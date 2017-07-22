@@ -12,7 +12,8 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
   $stateProvider
     .state('productsIndex', {
       url: '/products',
-      templateUrl: '/js/views/products/index.html'
+      templateUrl: '/js/views/products/index.html',
+      controller: 'Products as products'
     })
     .state('productsNew', {
       url: '/products/new',

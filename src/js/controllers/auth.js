@@ -25,7 +25,8 @@ function Login($auth, $state) {
 
   function submit() {
     $auth.login(vm.credentials)
-      .then(() => $state.go('products'));
+      .then(() => $state.go('productsIndex'))
+      .catch(() => $state.go('login'));
   }
 
   vm.submit = submit;

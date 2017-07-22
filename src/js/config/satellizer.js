@@ -2,8 +2,8 @@ angular
   .module('desireApp')
   .config(Auth);
 
-Auth.$inject = ['$authProvider'];
-function Auth($authProvider) {
-  $authProvider.signupUrl = '/api/register';
-  $authProvider.loginUrl = '/api/login';
+Auth.$inject = ['$authProvider', 'API_URL'];
+function Auth($authProvider, API_URL) {
+  $authProvider.signupUrl = `${API_URL}/register`;
+  $authProvider.loginUrl = `${API_URL}/login`;
 }
