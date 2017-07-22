@@ -9,8 +9,10 @@ function Register($auth, $state) {
   vm.user = {};
 
   function submit() {
-    $auth.register(vm.user)
-      .then(() => $state.go('login'));
+    $auth.signup(vm.user)
+      .then(() => $state.go('login'))
+      .catch(() => $state.go('register'));
+
   }
 
   vm.submit = submit;

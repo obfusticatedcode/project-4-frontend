@@ -4,6 +4,6 @@ angular
 
 Auth.$inject = ['$authProvider'];
 function Auth($authProvider) {
-  $authProvider.registerUrl = '/api/register';
+  $authProvider.signupUrl = '/api/register';
   $authProvider.loginUrl = '/api/login';
 }

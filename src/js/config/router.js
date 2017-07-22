@@ -18,14 +18,20 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/products/new',
       templateUrl: '/js/views/products/new.html'
     })
+    .state('usersShow', {
+      url: '/users/:id',
+      templateUrl: 'js/views/users/profile.html'
+    })
     .state('register', {
       url: '/register',
-      templateUrl: '/js/views/auth/register.html'
+      templateUrl: '/js/views/auth/register.html',
+      controller: 'Register as register'
     })
     .state('login', {
       url: '/login',
-      templateUrl: '/js/views/auth/login.html'
-      
+      templateUrl: '/js/views/auth/login.html',
+      controller: 'Login as login'
+
     });
 
   $urlRouterProvider.otherwise('/products');
