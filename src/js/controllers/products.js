@@ -7,5 +7,5 @@ function Products(Product) {
   const vm = this;
 
   vm.all = Product.query();
-  
+
 }

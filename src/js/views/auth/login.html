@@ -23,21 +23,36 @@
 			    			</div>
                 <!-- button -->
                 <div class="form-group">
-                  <input type="submit" value="Login" class="btn btn-info btn-block">
+                  <input type="submit" value="Login" class="round btn btn-info btn-block">
                 </div>
 			    		</form>
+
+              <h5 id="login-text"><span>or</span></h5>
+
               <!-- oauth buttons -->
               <div class="oauth-login">
-                <input type="button" value="Github" class="btn btn-info btn-block"
-                ng-click="login.authenticate('github')">
-                <input type="button" value="Facebook" class="btn btn-info btn-block"
-                ng-click="login.authenticate('facebook')">
+                <div class="row">
+                  <div  class=" col-sm-offset-2 col-xs-3 col-sm-3 col-md-3">
+                    <input type="button" value="&#xf09b;" class="fa btn btn-info btn-block"
+                    ng-click="login.authenticate('github')"
+                    id="github-round-botton">
+                  </div>
 
-                <input type="button" value="Instagram" class="btn btn-info btn-block"
-                ng-click="login.authenticate('instagram')">
+                  <div class=" col-xs-3 col-sm-3 col-md-3">
+                    <input type="button" value="&#xf09a;" class="fa btn btn-info btn-block"
+                    ng-click="login.authenticate('facebook')"
+                    id="facebook-round-botton">
+                  </div>
+
+                  <div class=" col-xs-3 col-sm-3 col-md-3">
+                    <input type="button" value="&#xf16d;" class="round fa btn btn-info btn-block"
+                    ng-click="login.authenticate('instagram')"
+                    id="instagram-round-botton">
+                  </div>
+
+                </div>
+
               </div>
-
-              
 			    	</div>
 	    		</div>
     		</div>
