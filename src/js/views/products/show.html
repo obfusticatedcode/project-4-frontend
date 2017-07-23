@@ -1,2 +1,35 @@
 <!DOCTYPE html>
-<h1>Show products</h1>
+<h1>Show product</h1>
+<!DOCTYPE html>
+{{ productsShow.product }}
+<div class="row">
+  <div class="col-md-6">
+    <div class="product">
+      <h2>{{ productsShow.product.name }}</h2>
+      <h3>{{ productsShow.product.category }}</h3>
+      <img ng-src="{{ productsShow.product.image }}">
+      <p>Posted by: <strong>{{ productsShow.product.user.username }}</strong></p>
+      <img ng-src="{{ productsShow.product.user.image }}" alt="">
+      <button ui-sref="productsEdit({id: productsShow.product.id})" >Edit</button>
+      <button ng-click="productsShow.delete()">Delete</button>
+    </div>
+  </div>
+
+<div class="features">
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Features</h2>
+      <ul>
+        <li ng-repeat="feature in productsShow.product.features">{{ feature.description }} - <strong>{{ feature.user.username }}</strong><button ng-click="productsShow.deleteFeature(feature)" ng-if="main.isAuthenticated() && main.currentUser.id === feature.user.id">Delete</button></li>
+      </ul>
+    </div>
+    <div class="col-md-6" ng-if="main.isAuthenticated()">
+      <h2>Feature Request</h2>
+      <form ng-submit="productsShow.addFeature()">
+        <textarea type="text" name="body" ng-model="productsShow.feature.body"></textarea>
+        <button>Create</button>
+      </form>
+    </div>
+  </div>
+</div>
+</div>

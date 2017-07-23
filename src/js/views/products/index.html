@@ -1,31 +1,28 @@
 <!DOCTYPE html>
 <h1>Products</h1>
 
-<section ng-controller="Products as products">
+<section ng-controller="ProductsIndexCtrl as products">
 
   <div class="products" ng-repeat="product in products.all">
-    <div class = "row">
-      <div class = "col-sm-4 col-md-4">
+    <div class = "col-sm-offset-1 col-sm-3 col-md-3">
+      <div class = "row">
+
         <div class = "thumbnail">
           <img ng-src = "{{ product.image }}" alt = "Generic placeholder thumbnail">
         </div>
+
         <div class = "caption">
           <h3>{{ product.name }}</h3>
           <p>{{ product.category }}</p>
           <p>Posted by: {{ product.user.username }}</p>
           <p>
-            <a href = "#" class = "btn btn-primary" role = "button">
-              Button
-            </a>
-
-            <a href = "#" class = "btn btn-default" role = "button">
-              Button
-            </a>
+            <!-- TODO: click love and the product goes to the top also have a label counter for the number of votes -->
+            <a href = "#" class ="heart" role ="button"></a>
+            <button ui-sref="productsShow({ id: product.id })" class = "btn btn-default">View</button>
           </p>
-
         </div>
+
       </div>
     </div>
   </div>
-
 </section>

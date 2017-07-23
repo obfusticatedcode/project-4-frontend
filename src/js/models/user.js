@@ -7,4 +7,5 @@ function User($resource, API_URL) {
   return new $resource(`${API_URL}/users/:id`, { id: '@id' }, {
     update: { method: 'PUT'}
   });
+
 }

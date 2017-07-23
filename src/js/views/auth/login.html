@@ -4,7 +4,7 @@
 <div >
         <div class="row centered-form">
         <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
-        	<div class="panel panel-default">
+        	<div class="panel panel-default custom-form">
         		<div class="panel-heading">
 			    		<h3 class="panel-title">Please login </h3>
 			 			</div>
@@ -13,17 +13,17 @@
 
                 <!-- email address  -->
 			    			<div class="form-group">
-			    				<input type="email" name="email" id="email" class="form-control input-sm"
+			    				<input type="email" name="email" id="email" class="form-control input-sm custom-input"
                   placeholder="Email Address" ng-model="login.credentials.email">
 			    			</div>
                 <!-- password -->
 			    			<div class="form-group">
-			    				<input type="password" name="password" id="password" class="form-control input-sm"
+			    				<input type="password" name="password" id="password" class="form-control input-sm custom-input"
                   placeholder="Password" ng-model="login.credentials.password">
 			    			</div>
                 <!-- button -->
                 <div class="form-group">
-                  <input type="submit" value="Login" class="round btn btn-info btn-block">
+                  <input type="submit" value="Login" class="custom-button btn btn-info btn-block">
                 </div>
 			    		</form>
 
@@ -32,23 +32,26 @@
               <!-- oauth buttons -->
               <div class="oauth-login">
                 <div class="row">
-                  <div  class=" col-sm-offset-2 col-xs-3 col-sm-3 col-md-3">
-                    <input type="button" value="&#xf09b;" class="fa btn btn-info btn-block"
-                    ng-click="login.authenticate('github')"
-                    id="github-round-botton">
+                  <div class="col-offset-1 col-md-11 col-sm-12 col-xs-12">
+                    <div  class=" col-sm-offset-2 col-xs-3 col-sm-3 col-md-3">
+                      <input type="button" value="&#xf09b;" class="fa btn btn-info btn-block"
+                      ng-click="login.authenticate('github')"
+                      id="github-round-botton">
+                    </div>
+
+                    <div class=" col-xs-3 col-sm-3 col-md-3">
+                      <input type="button" value="&#xf09a;" class="fa btn btn-info btn-block"
+                      ng-click="login.authenticate('facebook')"
+                      id="facebook-round-botton">
+                    </div>
+
+                    <div class=" col-xs-3 col-sm-3 col-md-3">
+                      <input type="button" value="&#xf16d;" class="fa btn btn-info btn-block"
+                      ng-click="login.authenticate('instagram')"
+                      id="instagram-round-botton">
+                    </div>
                   </div>
 
-                  <div class=" col-xs-3 col-sm-3 col-md-3">
-                    <input type="button" value="&#xf09a;" class="fa btn btn-info btn-block"
-                    ng-click="login.authenticate('facebook')"
-                    id="facebook-round-botton">
-                  </div>
-
-                  <div class=" col-xs-3 col-sm-3 col-md-3">
-                    <input type="button" value="&#xf16d;" class="round fa btn btn-info btn-block"
-                    ng-click="login.authenticate('instagram')"
-                    id="instagram-round-botton">
-                  </div>
 
                 </div>
 

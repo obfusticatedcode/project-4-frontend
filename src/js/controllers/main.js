@@ -18,12 +18,22 @@ function MainCtrl($http, API_URL, $rootScope, $state, $auth, $transitions) {
     }
   });
 
+  // protecting some states/routes if the user isn't loggged in
+  const protectedStates = ['productsNew', 'productsEdit'];
+
   $transitions.onSuccess({}, (transition) => {
-    vm.pageName = transition.$to().name; // Storing the current state name as a string
+    if((!$auth.isAuthenticated() && protectedStates.includes(transition.$to().name))) {
+      vm.message = 'You must be logged in to access this page.';
+      $state.target('login');
+    }
+
+
     if(vm.stateHasChanged) vm.message = null;
     if(!vm.stateHasChanged) vm.stateHasChanged = true;
     vm.isNavCollapsed = true;
-    if($auth.getPayload()) vm.currentUserId = $auth.getPayload().userId;
+    vm.pageName = transition.$to().name; // Storing the current state name as a string
+    if($auth.getPayload()) vm.currentUserId = $auth.getPayload().id;
+    console.log('The currently logged in user',vm.currentUserId);
   });
 
   function logout() {

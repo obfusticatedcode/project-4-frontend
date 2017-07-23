@@ -3,6 +3,7 @@
 <head>
   <base href="/" >
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Desire</title>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -26,11 +27,11 @@
     </div>
     <div class="collapse navbar-collapse" uib-collapse="main.isNavCollapsed">
       <ul class="nav navbar-nav">
-        <li ng-if="main.isAuthenticated()"><a ui-sref="productsIndex">Products</a></li>
-        <li ng-if="main.isAuthenticated()"><a ui-sref="UsersShow({ id: main.currentUserId })" >Profile</a></li>
-        <li ng-if="main.isAuthenticated()"><a ui-sref="productsNew" >Add Product</a></li>
-        <li ng-if="!main.isAuthenticated()"><a ui-sref="login">Login</a></li>
-        <li ng-if="!main.isAuthenticated()"><a ui-sref="register">Register</a></li>
+        <li ng-if="main.isAuthenticated()"><a ui-sref="productsIndex" ui-sref-active="active">Products</a></li>
+        <li ng-if="main.isAuthenticated()"><a ui-sref="UsersShow({ id: main.currentUserId })" ui-sref-active="active" >Profile</a></li>
+        <li ng-if="main.isAuthenticated()"><a ui-sref="productsNew" ui-sref-active="active">Add Product</a></li>
+        <li ng-if="!main.isAuthenticated()"><a ui-sref="login" ui-sref-active="active">Login</a></li>
+        <li ng-if="!main.isAuthenticated()"><a ui-sref="register" ui-sref-active="active">Register</a></li>
         <li ng-if="main.isAuthenticated()"><a ui-sref="logout" ng-click="main.logout()" >Logout</a></li>
       </ul>
     </div>

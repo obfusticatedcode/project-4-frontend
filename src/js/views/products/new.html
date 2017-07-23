@@ -1,2 +1,41 @@
 <!DOCTYPE html>
 <h1>Add a new product</h1>
+{{ productsNew.product}}
+{{ productsNew.currentUserId }}
+
+<div >
+        <div class="row centered-form">
+        <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+        	<div class="panel panel-default custom-form">
+        		<div class="panel-heading">
+			    		<h3 class="panel-title">Add a product </h3>
+			 			</div>
+			 			<div class="panel-body">
+			    		<form  ng-submit="productsNew.addProduct()">
+			    			<div class="row">
+			    			</div>
+                <!-- name -->
+			    			<div class="form-group">
+			    				<input type="text" name="name" id="name" class="form-control custom-input"
+                  placeholder="Name" ng-model="productsNew.product.name">
+			    			</div>
+                <!-- category-->
+			    			<div class="form-group">
+			    				<input type="text" name="category" id="category" class="form-control custom-input"
+                  placeholder="Category" ng-model="productsNew.product.category">
+			    			</div>
+                <!-- Image -->
+			    			<div class="form-group">
+			    				<input type="text" name="image" id="image" class="form-control custom-input"
+                  placeholder="Photo" ng-model="productsNew.product.image">
+			    			</div>
+
+                <!-- button -->
+			    			<input type="submit" value="Add" class="btn btn-info btn-block custom-button">
+
+			    		</form>
+			    	</div>
+	    		</div>
+    		</div>
+    	</div>
+    </div>

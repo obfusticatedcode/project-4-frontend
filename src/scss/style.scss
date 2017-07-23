@@ -27,8 +27,6 @@ box-shadow: 2px 2px 15px rgba(0,0,0, .75);
 }
 /***NOW STYLE THE BUTTON'S HOVER STATE***/
 #facebook-round-botton:hover {
-background:#c20b0b;
-border:1px solid #c20b0b;
 /*reduce the size of the shadow to give a pushed effect*/
 -webkit-box-shadow: 0px 0px 5px rgba(0,0,0, .75);
 -moz-box-shadow: 0px 0px 5px rgba(0,0,0, .75);
@@ -54,9 +52,6 @@ box-shadow: 2px 2px 15px rgba(0,0,0, .75);
 }
 /***NOW STYLE THE BUTTON'S HOVER STATE***/
 #instagram-round-botton:hover {
-background:#c20b0b;
-
-border:1px solid #c20b0b;
 /*reduce the size of the shadow to give a pushed effect*/
 -webkit-box-shadow: 0px 0px 5px rgba(0,0,0, .75);
 -moz-box-shadow: 0px 0px 5px rgba(0,0,0, .75);
@@ -81,14 +76,65 @@ box-shadow: 2px 2px 15px rgba(0,0,0, .75);
 }
 /***NOW STYLE THE BUTTON'S HOVER STATE***/
 #github-round-botton:hover {
-background:#c20b0b;
-border:1px solid #c20b0b;
 /*reduce the size of the shadow to give a pushed effect*/
 -webkit-box-shadow: 0px 0px 5px rgba(0,0,0, .75);
 -moz-box-shadow: 0px 0px 5px rgba(0,0,0, .75);
 box-shadow: 0px 0px 5px rgba(0,0,0, .75);
 }
 
+/* buttons */
+.custom-button {
+width:50%; /*same as the height*/
+height:50%; /*same as the width*/
+color:#fff;
+font-size:1em;
+/*set the border-radius at half the size of the width and height*/
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+/*give the button a small drop shadow*/
+-webkit-box-shadow: 0 0 10px rgba(0,0,0, .75);
+-moz-box-shadow: 0 0 10px rgba(0,0,0, .75);
+box-shadow: 2px 2px 15px rgba(0,0,0, .75);
+}
+/***NOW STYLE THE BUTTON'S HOVER STATE***/
+.custom-button:hover {
+/*reduce the size of the shadow to give a pushed effect*/
+-webkit-box-shadow: 0px 0px 5px rgba(0,0,0, .75);
+-moz-box-shadow: 0px 0px 5px rgba(0,0,0, .75);
+box-shadow: 0px 0px 5px rgba(0,0,0, .75);
+}
+
+/* input fields  */
+.custom-input{
+width:100%; /*same as the height*/
+line-height:50%; /*same as the width*/
+font-size:1em;
+/*set the border-radius at half the size of the width and height*/
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+/*give the button a small drop shadow*/
+-webkit-box-shadow: 0 0 10px rgba(0,0,0, .65);
+-moz-box-shadow: 0 0 10px rgba(0,0,0, .65);
+box-shadow: 2px 2px 15px rgba(0,0,0, .65);
+}
+
+/*forms*/
+.custom-form {
+width:100%; /*same as the height*/
+height:100%; /*same as the width*/
+color:#fff;
+font-size:1em;
+/*set the border-radius at half the size of the width and height*/
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+/*give the button a small drop shadow*/
+-webkit-box-shadow: 0 0 10px rgba(0,0,0, .75);
+-moz-box-shadow: 0 0 10px rgba(0,0,0, .75);
+box-shadow: 2px 2px 15px rgba(0,0,0, .75);
+}
 
 
 .line-each-side{
@@ -121,3 +167,32 @@ box-shadow: 0px 0px 5px rgba(0,0,0, .75);
   text-transform: uppercase;
   margin-bottom: 20px;
 }
+
+
+/*love button*/
+.heart {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 50%;
+  top: 91%;
+  transform: translate(-50%, -50%);
+  background: url(https://cssanimation.rocks/images/posts/steps/heart.png) no-repeat;
+  background-position: 0 0;
+  cursor: pointer;
+  animation: fave-heart 3s steps(28);
+}
+.heart:hover {
+  background-position: -2800px 0;
+  transition: background 1s steps(28);
+}
+@keyframes fave-heart {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -2800px 0;
+  }
+}
+
+/* end of love button */

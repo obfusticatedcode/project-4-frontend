@@ -13,11 +13,22 @@ function Router($stateProvider, $locationProvider) {
     .state('productsIndex', {
       url: '/products',
       templateUrl: '/js/views/products/index.html',
-      controller: 'Products as products'
+      controller: 'ProductsIndexCtrl as products'
     })
     .state('productsNew', {
       url: '/products/new',
-      templateUrl: '/js/views/products/new.html'
+      templateUrl: '/js/views/products/new.html',
+      controller: 'ProductsNewCtrl as productsNew'
+    })
+    .state('productsShow', {
+      url: '/products/:id',
+      templateUrl: '/js/views/products/show.html',
+      controller: 'ProductsShowCtrl as productsShow'
+    })
+    .state('productsEdit', {
+      url: '/products/:id/edit',
+      templateUrl: '/js/views/products/edit.html',
+      controller: 'ProductsEditCtrl as productsEdit'
     })
     .state('usersShow', {
       url: '/users/:id',
