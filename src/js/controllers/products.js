@@ -14,6 +14,11 @@ function ProductsIndexCtrl(Product, User) {
   vm.all = Product.query();
   vm.users = User.query();
 
+  function hello() {
+    console.log(`Hello!`);
+  }
+
+  vm.hello = hello;
 }
 
 //new

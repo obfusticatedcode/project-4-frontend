@@ -1,36 +1,40 @@
 <!DOCTYPE html>
 <h1>Show product</h1>
 <!DOCTYPE html>
-<img ng-src="{{ productsShow.product.image_src }}" alt="">
+
 <div class="row">
   <div class="col-md-6">
     <div class="product">
       <h2>{{ productsShow.product.name }}</h2>
       <h3>{{ productsShow.product.category }}</h3>
-      <img ng-src="{{ productsShow.product.image_src }}">
+      <img class="thumbnail" ng-src="{{ productsShow.product.image_src }}">
       <p>Posted by: <strong>{{ productsShow.product.user.username }}</strong></p>
-      <img ng-src="{{ productsShow.product.user.image }}" alt="">
+      <img  ng-src="{{ productsShow.product.user.image }}" alt="">
       <button ui-sref="productsEdit({id: productsShow.product.id})" >Edit</button>
       <button ng-click="productsShow.delete()" ng-if="main.isAuthenticated() && main.currentUser.id === product.user.id">Delete</button>
     </div>
   </div>
 
-<div class="features">
-  <div class="row">
-    <div class="col-md-6" ng-repeat="feature in productsShow.product.features">
-      <h2>Features</h2>
-      <ul>
-        <li >{{ feature.description }} - <strong>{{ feature.user.username }}</strong><button ng-click="productsShow.deleteFeature(feature)" ng-if="main.isAuthenticated() && main.currentUser.id === feature.user.id">Delete</button></li>
-      </ul>
-      <button ui-sref="featuresShow({ id: feature.id })" class = "btn btn-default">View</button>
-    </div>
-    <div class="col-md-6" ng-if="main.isAuthenticated()">
-      <h2>Feature Request</h2>
-      <form ng-submit="productsShow.addFeature()">
-        <textarea type="text" name="body" ng-model="productsShow.feature.description" ></textarea>
-        <button>Create</button>
-      </form>
+
+</div>
+
+<div class="row">
+  <div class="features">
+    <div class="row">
+      <div class="col-md-6" ng-repeat="feature in productsShow.product.features">
+        <h2>Features</h2>
+        <ul>
+          <li >{{ feature.description }} - <strong>{{ feature.user.username }}</strong><button ng-click="productsShow.deleteFeature(feature)" ng-if="main.isAuthenticated() && main.currentUser.id === feature.user.id">Delete</button></li>
+        </ul>
+        <button ui-sref="featuresShow({ id: feature.id })" class = "btn btn-default">View</button>
+      </div>
+      <div class="col-md-6" ng-if="main.isAuthenticated()">
+        <h2>Feature Request</h2>
+        <form ng-submit="productsShow.addFeature()">
+          <textarea type="text" name="body" ng-model="productsShow.feature.description" ></textarea>
+          <button>Create</button>
+        </form>
+      </div>
     </div>
   </div>
-</div>
 </div>

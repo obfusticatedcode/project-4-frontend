@@ -14,10 +14,21 @@
           <p>{{ product.category }}</p>
           <p>Posted by: {{ product.user.username }}</p>
           <p>
-            <!-- TODO: click love and the product goes to the top also have a label counter for the number of votes -->
-            <a href = "#" class ="heart" role ="button"></a>
+            <!-- <a href = "#" class ="heart" role ="button"></a> -->
+
             <button ui-sref="productsShow({ id: product.id })" class = "btn btn-default">View</button>
           </p>
+          <!-- TODO: click love and the product goes to the top also have a label counter for the number of votes -->
+          <!-- voting -->
+          <div class="voting-buttons">
+            <button type="button" name="button" ng-click="products.hello()">Hello</button>
+            <button type="button" name="button" class="btn btn-success">Upvote</button>
+            <button type="button" name="button" class="btn btn-danger">Downvote</button>
+            <div class="counter">
+              <label for="counter">0</label>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
