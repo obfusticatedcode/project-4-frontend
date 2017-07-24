@@ -33,7 +33,7 @@ function MainCtrl($http, API_URL, $rootScope, $state, $auth, $transitions) {
     vm.isNavCollapsed = true;
     vm.pageName = transition.$to().name; // Storing the current state name as a string
     if($auth.getPayload()) vm.currentUserId = $auth.getPayload().id;
-    console.log('The currently logged in user',vm.currentUserId);
+  
   });
 
   function logout() {

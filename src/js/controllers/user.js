@@ -1,9 +1,9 @@
 angular
   .module('desireApp')
-  .controller('UsersShow',UsersShow);
+  .controller('UsersShowCtrl',UsersShowCtrl);
 
-UsersShow.$inject = ['$auth', 'User', '$state'];
-function UsersShow($auth, User, $state) {
+UsersShowCtrl.$inject = ['$auth', 'User', '$state'];
+function UsersShowCtrl($auth, User, $state) {
   const vm = this;
 
   vm.user = User.get($state.params);

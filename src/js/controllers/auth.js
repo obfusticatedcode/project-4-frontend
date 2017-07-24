@@ -1,10 +1,10 @@
 angular
 .module('desireApp')
-.controller('Register', Register)
-.controller('Login', Login);
+.controller('RegisterCtrl', RegisterCtrl)
+.controller('LoginCtrl', LoginCtrl);
 
-Register.$inject = ['$auth', '$state'];
-function Register($auth, $state) {
+RegisterCtrl.$inject = ['$auth', '$state'];
+function RegisterCtrl($auth, $state) {
   const vm = this;
   vm.user = {};
 
@@ -18,8 +18,8 @@ function Register($auth, $state) {
   vm.submit = submit;
 }
 
-Login.$inject = [ '$auth', '$state'];
-function Login($auth, $state) {
+LoginCtrl.$inject = [ '$auth', '$state'];
+function LoginCtrl($auth, $state) {
   const vm = this;
   vm.credentials = {};
 

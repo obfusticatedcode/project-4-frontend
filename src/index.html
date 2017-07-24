@@ -26,9 +26,10 @@
       <a class="navbar-brand" ui-sref="#">Logo</a>
     </div>
     <div class="collapse navbar-collapse" uib-collapse="main.isNavCollapsed">
+      {{ }}
       <ul class="nav navbar-nav">
         <li ng-if="main.isAuthenticated()"><a ui-sref="productsIndex" ui-sref-active="active">Products</a></li>
-        <li ng-if="main.isAuthenticated()"><a ui-sref="UsersShow({ id: main.currentUserId })" ui-sref-active="active" >Profile</a></li>
+        <li ng-if="main.isAuthenticated()"><a ui-sref="usersShow({ id: main.currentUserId })" ui-sref-active="active" >Profile</a></li>
         <li ng-if="main.isAuthenticated()"><a ui-sref="productsNew" ui-sref-active="active">Add Product</a></li>
         <li ng-if="!main.isAuthenticated()"><a ui-sref="login" ui-sref-active="active">Login</a></li>
         <li ng-if="!main.isAuthenticated()"><a ui-sref="register" ui-sref-active="active">Register</a></li>

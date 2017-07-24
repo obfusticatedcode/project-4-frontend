@@ -1,14 +1,3 @@
-// angular
-//   .module('desireApp')
-//   .controller('Products', Products);
-//
-// Products.$inject = ['Product'];
-// function Products(Product) {
-//   const vm = this;
-//
-//   vm.all = Product.query();
-//
-// }
 
 angular
 .module('desireApp')
@@ -72,13 +61,13 @@ function ProductsShowCtrl(Product, User,Feature, $stateParams, $state, $auth) {
 
   //features
   function addFeature() {
-    vm.feature.event_id = vm.event.id;
+    vm.feature.product_id = vm.product.id;
 
     Feature
     .save(vm.feature)
     .$promise
     .then((feature) => {
-      vm.event.features.push(feature);
+      vm.product.features.push(feature);
       vm.feature = {};
     });
   }
@@ -90,8 +79,8 @@ function ProductsShowCtrl(Product, User,Feature, $stateParams, $state, $auth) {
     .delete({ id: feature.id })
     .$promise
     .then(() => {
-      const index = vm.event.features.indexOf(feature);
-      vm.event.features.splice(index, 1);
+      const index = vm.product.features.indexOf(feature);
+      vm.product.features.splice(index, 1);
     });
   }
 

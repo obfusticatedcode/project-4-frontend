@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<h1>Features Show</h1>
+
+<div class="">
+  <h5>{{ featuresShow.feature.title }}</h5>
+  <h5>{{ featuresShow.feature.description }}</h5>
+</div>
+<button ng-click="featuresShow.delete()">Delete</button>
+<div class="col-md-6" ng-repeat="comment in featuresShow.feature.comments.all">
+  <p>{{ comment }}</p>
+  <button ng-click="featuresShow.deleteComment(comment)" >Delete</button>
+</div>
+
+<!-- comments -->
+<div class="comments">
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Comments</h2>
+      <ul>
+        <li ng-repeat="comment in featuresShow.feature.comments">{{ comment.description }} - <strong>{{ comment.user.username }}</strong><button ng-click="featuresShow.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUser.id === comment.user.id">Delete</button></li>
+      </ul>
+    </div>
+    <div class="col-md-6" ng-if="main.isAuthenticated()">
+      <h2>Add Comment</h2>
+      <form ng-submit="featuresShow.addComment()">
+        <textarea type="text" name="body" ng-model="featuresShow.comment.description"></textarea>
+        <button>Add a comment</button>
+      </form>
+    </div>
+  </div>
+</div>

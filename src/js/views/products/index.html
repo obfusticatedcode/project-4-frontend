@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <h1>Products</h1>
 
-<section ng-controller="ProductsIndexCtrl as products">
+<section>
 
   <div class="products" ng-repeat="product in products.all">
     <div class = "col-sm-offset-1 col-sm-3 col-md-3">
       <div class = "row">
-
         <div class = "thumbnail">
-          <img ng-src = "{{ product.image }}" alt = "Generic placeholder thumbnail">
+          <img ng-src="{{ product.image_src }}" alt = "thumbnail">
         </div>
-
         <div class = "caption">
           <h3>{{ product.name }}</h3>
           <p>{{ product.category }}</p>
@@ -21,7 +19,6 @@
             <button ui-sref="productsShow({ id: product.id })" class = "btn btn-default">View</button>
           </p>
         </div>
-
       </div>
     </div>
   </div>
