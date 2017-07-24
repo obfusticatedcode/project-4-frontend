@@ -82,6 +82,7 @@ function FeaturesShowCtrl(Feature, User,Comment, $stateParams, $state, $auth) {
     .then(() => {
       const index = vm.feature.comments.indexOf(comment);
       vm.feature.comments.splice(index, 1);
+      $state.go('productsIndex');
     });
   }
 

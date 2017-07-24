@@ -11,7 +11,7 @@
       <p>Posted by: <strong>{{ productsShow.product.user.username }}</strong></p>
       <img ng-src="{{ productsShow.product.user.image }}" alt="">
       <button ui-sref="productsEdit({id: productsShow.product.id})" >Edit</button>
-      <button ng-click="productsShow.delete()">Delete</button>
+      <button ng-click="productsShow.delete()" ng-if="main.isAuthenticated() && main.currentUser.id === product.user.id">Delete</button>
     </div>
   </div>
 

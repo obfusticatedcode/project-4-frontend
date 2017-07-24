@@ -13,14 +13,14 @@ function ProductsIndexCtrl(Product, User) {
 
   vm.all = Product.query();
   vm.users = User.query();
-  console.log('The users are:', vm.users);
+
 }
 
 //new
 ProductsNewCtrl.$inject = ['Product','User','$state'];
 function ProductsNewCtrl(Product, User, $state) {
   const vm = this;
-  vm.newProduct = {};
+  vm.product = {};
   vm.addProduct = addProduct;
 
   vm.all = Product.query();
@@ -29,10 +29,9 @@ function ProductsNewCtrl(Product, User, $state) {
 
   function addProduct() {
     Product
-    .save(vm.newProduct)
+    .save(vm.product)
     .$promise
     .then((product) => {
-      console.log(product);
       vm.all.push(product);
       $state.go('productsIndex');
     });
@@ -89,19 +88,22 @@ function ProductsShowCtrl(Product, User,Feature, $stateParams, $state, $auth) {
 
 
 //edit
-ProductsEditCtrl.$inject = ['Product', 'User','$stateParams','User', '$state'];
-function ProductsEditCtrl(Product, User, $stateParams, $state) {
+ProductsEditCtrl.$inject = ['Product', 'User', '$state'];
+function ProductsEditCtrl(Product, User, $state) {
   const vm = this;
+
+
+  Product.get($state.params).$promise.then((product)=> {
+    vm.product = product;
+  });
 
   vm.users = User.query();
 
-  vm.product = Product.get($stateParams);
-  console.log($stateParams);
   function productsUpdate() {
-
-    vm.product
-    .$update({ id: vm.product.id }, vm.product)
-    .then(() => $state.go('productsShow', $stateParams));
+    Product
+    .update({ id: vm.product.id }, vm.product)
+    .$promise
+    .then(() => $state.go('productsShow', { id: vm.product.id }));
 
   }
 
