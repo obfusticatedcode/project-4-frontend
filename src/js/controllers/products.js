@@ -14,11 +14,19 @@ function ProductsIndexCtrl(Product, User) {
   vm.all = Product.query();
   vm.users = User.query();
 
-  function hello() {
-    console.log(`Hello!`);
+  function upvote(product) {
+    product.$upvote()
+      .then(() => product.upvotes += 1);
   }
 
-  vm.hello = hello;
+  function downvote(product) {
+
+    product.$downvote()
+      .then(() => product.downvotes += 1);
+  }
+
+  vm.upvote = upvote;
+  vm.downvote = downvote;
 }
 
 //new

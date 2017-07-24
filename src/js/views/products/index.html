@@ -2,7 +2,6 @@
 <h1>Products</h1>
 
 <section>
-
   <div class="products" ng-repeat="product in products.all">
     <div class = "col-sm-offset-1 col-sm-3 col-md-3">
       <div class = "row">
@@ -20,13 +19,12 @@
           </p>
           <!-- TODO: click love and the product goes to the top also have a label counter for the number of votes -->
           <!-- voting -->
+          <h4>Upvotes {{ product.upvotes }}</h4>
+          <h4>Downvotes {{ product.downvotes }}</h4>
+
           <div class="voting-buttons">
-            <button type="button" name="button" ng-click="products.hello()">Hello</button>
-            <button type="button" name="button" class="btn btn-success">Upvote</button>
-            <button type="button" name="button" class="btn btn-danger">Downvote</button>
-            <div class="counter">
-              <label for="counter">0</label>
-            </div>
+            <button type="button" name="button"  class="btn btn-success" ng-click="products.upvote(product)">Upvote</button>
+            <button type="button" name="button" class="btn btn-danger" ng-click="products.downvote(product)">Downvote</button>
           </div>
 
         </div>
