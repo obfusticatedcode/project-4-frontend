@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<h1>Add a new product</h1>
+
 {{ productsNew.product}}
 {{ productsNew.currentUserId }}
+{{ products }}
 
 <div >
         <div class="row centered-form">
         <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
-        	<div class="panel panel-default custom-form">
+        	<div class="panel panel-default">
         		<div class="panel-heading">
 			    		<h3 class="panel-title">Add a product </h3>
 			 			</div>
@@ -25,11 +26,13 @@
                   placeholder="Category" ng-model="productsNew.product.category">
 			    			</div>
                 <!-- Image -->
+
                 <div class="form-group">
+                  <label for="base64" class="btn btn-success image-upload-button">Upload a photo</label>
                   <input type="file" base64 name="base64" id="base64"
-                  class="form-control custom-input"
+                  class="form-control image-upload"
                   placeholder="Image"
-                  ng-model="productsNew.product.base64">
+                  ng-model="productsNew.product.base64" hidden>
                 </div>
 
                 <!-- button -->

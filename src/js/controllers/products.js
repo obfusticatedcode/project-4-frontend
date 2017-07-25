@@ -15,18 +15,33 @@ function ProductsIndexCtrl(Product, User) {
   vm.users = User.query();
 
   function upvote(product) {
+    // console.log(product);
     product.$upvote()
-      .then(() => product.upvotes += 1);
+      .then((res) => {
+        console.log(res);
+        product = res;
+        // product.upvotes += 1;
+        // product.downvotes -= 1;
+
+      });
   }
+
+
 
   function downvote(product) {
-
     product.$downvote()
-      .then(() => product.downvotes += 1);
-  }
+      .then((res) => {
+        console.log(res);
+        product = res;
+        // product.downvotes += 1;
+        // product.upvotes -= 1;
 
+      });
+  }
+  // setInterval();
   vm.upvote = upvote;
   vm.downvote = downvote;
+
 }
 
 //new

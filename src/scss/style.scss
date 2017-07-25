@@ -1,7 +1,11 @@
 // Import all of your scss files here
+
+
+
 body{
   background-image: url(src/images/icons/lauren-mancke-60627.jpg);
   background: white;
+  font-family: 'Raleway', sans-serif;
 }
 /*variables*/
 $instagram: #8a3ab9;
@@ -20,10 +24,6 @@ font-size:1.6em;
 -webkit-border-radius: 50px;
 -moz-border-radius: 50px;
 border-radius: 50px;
-/*give the button a small drop shadow*/
--webkit-box-shadow: 0 0 10px rgba(0,0,0, .75);
--moz-box-shadow: 0 0 10px rgba(0,0,0, .75);
-box-shadow: 2px 2px 15px rgba(0,0,0, .75);
 }
 /***NOW STYLE THE BUTTON'S HOVER STATE***/
 #facebook-round-botton:hover {
@@ -45,10 +45,7 @@ font-size:1.6em;
 -webkit-border-radius: 50px;
 -moz-border-radius: 50px;
 border-radius: 50px;
-/*give the button a small drop shadow*/
--webkit-box-shadow: 0 0 10px rgba(0,0,0, .75);
--moz-box-shadow: 0 0 10px rgba(0,0,0, .75);
-box-shadow: 2px 2px 15px rgba(0,0,0, .75);
+
 }
 /***NOW STYLE THE BUTTON'S HOVER STATE***/
 #instagram-round-botton:hover {
@@ -69,10 +66,7 @@ font-size:1.6em;
 -webkit-border-radius: 50px;
 -moz-border-radius: 50px;
 border-radius: 50px;
-/*give the button a small drop shadow*/
--webkit-box-shadow: 0 0 10px rgba(0,0,0, .75);
--moz-box-shadow: 0 0 10px rgba(0,0,0, .75);
-box-shadow: 2px 2px 15px rgba(0,0,0, .75);
+
 }
 /***NOW STYLE THE BUTTON'S HOVER STATE***/
 #github-round-botton:hover {
@@ -89,13 +83,10 @@ height:50%; /*same as the width*/
 color:#fff;
 font-size:1em;
 /*set the border-radius at half the size of the width and height*/
--webkit-border-radius: 10px;
--moz-border-radius: 10px;
-border-radius: 10px;
-/*give the button a small drop shadow*/
--webkit-box-shadow: 0 0 10px rgba(0,0,0, .75);
--moz-box-shadow: 0 0 10px rgba(0,0,0, .75);
-box-shadow: 2px 2px 15px rgba(0,0,0, .75);
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+
 }
 /***NOW STYLE THE BUTTON'S HOVER STATE***/
 .custom-button:hover {
@@ -108,34 +99,25 @@ box-shadow: 0px 0px 5px rgba(0,0,0, .75);
 /* input fields  */
 .custom-input{
 width:100%; /*same as the height*/
-line-height:50%; /*same as the width*/
+line-height:60%; /*same as the width*/
 font-size:1em;
 /*set the border-radius at half the size of the width and height*/
--webkit-border-radius: 10px;
--moz-border-radius: 10px;
-border-radius: 10px;
-/*give the button a small drop shadow*/
--webkit-box-shadow: 0 0 10px rgba(0,0,0, .65);
--moz-box-shadow: 0 0 10px rgba(0,0,0, .65);
-box-shadow: 2px 2px 15px rgba(0,0,0, .65);
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+
 }
 
-/*forms*/
-.custom-form {
-width:100%; /*same as the height*/
-height:100%; /*same as the width*/
-color:#fff;
-font-size:1em;
-/*set the border-radius at half the size of the width and height*/
--webkit-border-radius: 10px;
--moz-border-radius: 10px;
-border-radius: 10px;
-/*give the button a small drop shadow*/
--webkit-box-shadow: 0 0 10px rgba(0,0,0, .75);
--moz-box-shadow: 0 0 10px rgba(0,0,0, .75);
-box-shadow: 2px 2px 15px rgba(0,0,0, .75);
-}
 
+
+/*input fields*/
+.input-sm {
+    height: 40px;
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
 
 .line-each-side{
      overflow: hidden;
@@ -196,3 +178,61 @@ box-shadow: 2px 2px 15px rgba(0,0,0, .75);
 }
 
 /* end of love button */
+
+/* Bootstrap button class*/
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 2;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+/*Image input*/
+.image-upload {
+    display: block;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
+.image-upload-button {
+    margin-left: 0%;
+    text-align: center;
+    width: 100%;
+}
+
+/***NOW STYLE THE BUTTON'S HOVER STATE***/
+.image-upload-button:hover {
+/*reduce the size of the shadow to give a pushed effect*/
+-webkit-box-shadow: 0px 0px 5px rgba(0,0,0, .75);
+-moz-box-shadow: 0px 0px 5px rgba(0,0,0, .75);
+box-shadow: 0px 0px 5px rgba(0,0,0, .75);
+}
+
+/*forms*/
+.panel-default {
+  border-color: #ddd;
+  margin-top: 55px;
+}
+
+.panel-heading {
+  padding: 10px 15px;
+  border-bottom: 1px solid transparent;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
