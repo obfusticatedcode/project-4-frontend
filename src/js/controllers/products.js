@@ -15,14 +15,11 @@ function ProductsIndexCtrl(Product, User) {
   vm.users = User.query();
 
   function upvote(product) {
-    // console.log(product);
+
     product.$upvote()
       .then((res) => {
         console.log(res);
         product = res;
-        // product.upvotes += 1;
-        // product.downvotes -= 1;
-
       });
   }
 
@@ -33,14 +30,13 @@ function ProductsIndexCtrl(Product, User) {
       .then((res) => {
         console.log(res);
         product = res;
-        // product.downvotes += 1;
-        // product.upvotes -= 1;
-
       });
   }
-  // setInterval();
+
   vm.upvote = upvote;
   vm.downvote = downvote;
+
+
 
 }
 
@@ -64,6 +60,16 @@ function ProductsNewCtrl(Product, User, $state) {
       $state.go('productsIndex');
     });
   }
+
+
+  // testing again
+  vm.categories = [
+    { name: 'Food & Drink' },
+    { name: 'Sports'},
+    { name: 'Cars'},
+    { name: 'Property'}
+  ];
+  vm.myCategory = vm.categories[2]; // red
 
 }
 

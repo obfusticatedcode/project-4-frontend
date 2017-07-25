@@ -1,36 +1,48 @@
 <!DOCTYPE html>
 <h1>Products</h1>
 
+
 <section>
 
-  <div class="products" ng-repeat="product in products.all">
-
-    <div class = "col-sm-offset-1 col-sm-3 col-md-3">
-      <div class = "row">
+  <div class = "row equal-height">
+    <!-- the products -->
+    <div class="col-sm-9" >
+      <div class="col-sm-4 products" ng-repeat="product in products.all" >
         <div class = "thumbnail">
-          <img ng-src="{{ product.image_src }}" alt = "thumbnail">
+          <img class="product-image" ng-src="{{ product.image_src }}" ui-sref="productsShow({ id: product.id })" alt = "thumbnail">
         </div>
         <div class = "caption">
-          <h3>{{ product.name }}</h3>
-          <p>{{ product.category }}</p>
-          <p>Posted by: {{ product.user.username }}</p>
+          <h3>{{ product.category }}</h3>
+          <h4 ui-sref="productsShow({ id: product.id })" class="product-name">{{ product.name }}</h4>
           <p>
             <!-- <a href = "#" class ="heart" role ="button"></a> -->
-
-            <button ui-sref="productsShow({ id: product.id })" class = "btn">View</button>
           </p>
-          <!-- TODO: click love and the product goes to the top also have a label counter for the number of votes -->
-          <!-- voting -->
-          <h4>Upvotes {{ product.upvotes }}</h4>
-          <h4>Downvotes {{ product.downvotes }}</h4>
-
+          <h5>Upvotes {{ product.upvotes }}</h5>
+          <h5>Downvotes {{ product.downvotes }}</h5>
           <div class="voting-buttons">
-            <button type="button" name="button"  class="btn btn-success" ng-click="products.upvote(product)">Upvote</button>
-            <button type="button" name="button" class="btn btn-danger" ng-click="products.downvote(product)">Downvote</button>
+            <a class="upvote" ng-click="products.upvote(product)">Upvote</a>
+            <a class="downvote" ng-click="products.downvote(product)">Downvote</a>
           </div>
+          <h5>Posted by: {{ product.user.username }}</h5>
+        </div>
+      </div>
+    </div>
 
+    <!-- the trending list -->
+    <div class="col-sm-3">
+      <div class="list-group">
+        <button type="button" class="list-group-item list-group-item-action active">
+          Trending  <span class="up-arrow">&#9650;</span>
+        </button>
+        <div class="trending" ng-repeat="product in products.all | orderBy:'-upvotes'">
+          <button type="button" class="list-group-item list-group-item-action"
+          ui-sref="productsShow({ id: product.id })">{{ product.name }} - {{ product.upvotes}}</button>
         </div>
       </div>
     </div>
   </div>
+
+
+
+
 </section>
