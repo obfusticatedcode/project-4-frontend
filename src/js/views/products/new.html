@@ -18,13 +18,13 @@
             <!-- name -->
             <div class="form-group">
               <input type="text" name="name" id="name" class="form-control custom-input"
-              placeholder="Name" ng-model="productsNew.product.name">
+              placeholder="Name" ng-model="productsNew.product.name" required>
             </div>
 
             <!-- category-->
             <label>
                 <select name="category" id="category" class="nullable form-control custom-input" ng-model="productsNew.product.category"
-                    ng-options="category.name as category.name for category in productsNew.categories | orderBy: 'name'">
+                    ng-options="category.name as category.name for category in productsNew.categories | orderBy: 'name'" required>
                   <option value="">Category</option>
                 </select>
             </label>
@@ -32,7 +32,7 @@
               <!-- Image -->
 
               <div class="form-group">
-                <label for="base64" class="btn btn-success image-upload-button">Upload a photo</label>
+                <label for="base64" class="btn btn-success image-upload-button" required>Upload a photo</label>
                 <input type="file" base64 name="base64" id="base64"
                 class="form-control image-upload"
                 placeholder="Image"

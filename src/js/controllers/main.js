@@ -11,7 +11,10 @@ function MainCtrl($http, API_URL, $rootScope, $state, $auth, $transitions) {
 
 
   $rootScope.$on('error', (e, err) => {
-    vm.message = err.data.message;
+    vm.message = '';
+    for(const key in err.data) {
+      vm.message += err.data[key].map(message => `${key} ${message}`).join('; ') + '; ';
+    }
     if(err.status === 401 && vm.pageName !== 'login') {
       if(vm.pageName !== '/') vm.stateHasChanged = false;
       $state.go('login');
@@ -33,7 +36,7 @@ function MainCtrl($http, API_URL, $rootScope, $state, $auth, $transitions) {
     vm.isNavCollapsed = true;
     vm.pageName = transition.$to().name; // Storing the current state name as a string
     if($auth.getPayload()) vm.currentUserId = $auth.getPayload().id;
-  
+
   });
 
   function logout() {

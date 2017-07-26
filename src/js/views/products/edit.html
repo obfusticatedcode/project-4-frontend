@@ -15,13 +15,13 @@
                 <!-- name -->
 			    			<div class="form-group">
 			    				<input type="text" name="name" id="name" class="form-control custom-input"
-                  placeholder="Name" ng-model="productsEdit.product.name">
+                  placeholder="Name" ng-model="productsEdit.product.name" required>
 			    			</div>
 
                 <!-- category-->
                 <label>
                     <select name="category" id="category" class="nullable form-control" ng-model="productsEdit.product.category"
-                        ng-options="category.name as category.name for category in productsEdit.categories">
+                        ng-options="category.name as category.name for category in productsEdit.categories" required>
                       <option value="">Category</option>
                     </select>
                 </label>

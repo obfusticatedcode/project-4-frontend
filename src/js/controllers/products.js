@@ -79,7 +79,8 @@ function ProductsNewCtrl(Product, User, $state) {
     { name: 'Jewelry'},
     { name: 'Music'},
     { name: 'Shoes'},
-    { name: 'Software'}
+    { name: 'Software'},
+    { name: 'Social Media'}
   ];
   vm.myCategory = vm.categories[2]; // default option
 
@@ -199,7 +200,8 @@ function ProductsEditCtrl(Product, User, $state) {
     { name: 'Jewelry'},
     { name: 'Music'},
     { name: 'Shoes'},
-    { name: 'Software'}
+    { name: 'Software'},
+    { name: 'Social Media'}
   ];
   vm.myCategory = vm.categories[2]; // default option
 

@@ -15,7 +15,7 @@
 
     <h3>Products</h3>
     <div class="products-features" ng-repeat="product in usersShow.user.upvoted_items">
-      <h4>{{ product.name }}</h4>
+      <h4 ui-sref="productsShow({ id: product.id })">{{ product.name }}</h4>
     </div>
   </div>
   <div class="col-sm-3">
@@ -24,5 +24,9 @@
       <h4>{{ product.description }}</h4>
     </div>
   </div>
-
+  <!-- edit and delete buttons -->
+  <div class="edit-delete-buttons">
+    <button class="btn custom-button" ui-sref="usersEdit({id: usersShow.user.id})" ng-show="main.isAuthenticated() && main.currentUser.id === userShow.user.id" >Edit</button>
+    <button class="btn custom-button" ng-click="usersShow.delete()" ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id">Delete</button>
+  </div>
 </div>
