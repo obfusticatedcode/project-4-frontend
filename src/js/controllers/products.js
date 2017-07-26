@@ -120,7 +120,9 @@ function ProductsShowCtrl(Product, User,Feature, $stateParams, $state, $auth) {
 
   function upvote(feature) {
     console.log(feature);
-    feature.$upvote()
+    Feature
+      .upvote({ id: feature.id })
+      .$promise
       .then((res) => {
         console.log(res);
         feature = res;
@@ -130,7 +132,9 @@ function ProductsShowCtrl(Product, User,Feature, $stateParams, $state, $auth) {
 
   function downvote(feature) {
     console.log(feature);
-    feature.$downvote()
+    Feature
+      .downvote({ id: feature.id })
+      .$promise
       .then((res) => {
         console.log(res);
         feature = res;
