@@ -20,17 +20,21 @@
 			    				<input type="text" name="name" id="name" class="form-control custom-input"
                   placeholder="Name" ng-model="productsEdit.product.name">
 			    			</div>
+
                 <!-- category-->
-			    			<div class="form-group">
-			    				<input type="text" name="category" id="category" class="form-control custom-input"
-                  placeholder="Category" ng-model="productsEdit.product.category">
-			    			</div>
+                <label>
+                    <select name="category" id="category" class="nullable form-control custom-input" ng-model="productsEdit.product.category"
+                        ng-options="category.name as category.name for category in productsEdit.categories">
+                      <option value="">Category</option>
+                    </select>
+                </label>
                 <!-- Image -->
                 <div class="form-group">
+                  <label for="base64" class="btn btn-success image-upload-button">Upload a photo</label>
                   <input type="file" base64 name="base64" id="base64"
-                  class="form-control custom-input"
+                  class="form-control image-upload"
                   placeholder="Image"
-                  ng-model="productsEdit.product.base64">
+                  ng-model="productsEdit.product.base64" hidden>
                 </div>
 
                 <!-- button -->

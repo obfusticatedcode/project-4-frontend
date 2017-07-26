@@ -7,7 +7,7 @@ angular
 .controller('ProductsEditCtrl', ProductsEditCtrl);
 
 //index
-ProductsIndexCtrl.$inject = ['Product', 'User', 'votes'];
+ProductsIndexCtrl.$inject = ['Product', 'User'];
 function ProductsIndexCtrl(Product, User) {
   const vm = this;
 
@@ -15,6 +15,7 @@ function ProductsIndexCtrl(Product, User) {
   vm.users = User.query();
 
   function upvote(product) {
+    console.log(product);
     product.$upvote()
       .then((res) => {
         console.log(res);
@@ -118,6 +119,7 @@ function ProductsShowCtrl(Product, User,Feature, $stateParams, $state, $auth) {
   vm.deleteFeature = deleteFeature;
 
   function upvote(feature) {
+    console.log(feature);
     feature.$upvote()
       .then((res) => {
         console.log(res);
@@ -162,5 +164,14 @@ function ProductsEditCtrl(Product, User, $state) {
 
   vm.update = productsUpdate;
 
+  //array of categories
+  vm.categories = [
+    { name: 'Food & Drink' },
+    { name: 'Sports'},
+    { name: 'Cars'},
+    { name: 'Property'},
+    { name: 'Games'}
+  ];
+  vm.myCategory = vm.categories[2]; // default option
 
 }//end of the productsEditCtrl function

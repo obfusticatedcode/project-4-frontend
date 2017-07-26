@@ -1,5 +1,16 @@
 <!DOCTYPE html>
+    <h4>{{ usersShow.user }}</h4>
 
+<h2>Your Profile</h2>
+<div class="row">
+  <div class="col-sm-6">
+    <h4>{{ usersShow.user.username }}</h4>
+    <h4>{{ usersShow.user.firstname }} {{ usersShow.user.lastname }}</h4>
+    <h4>{{ usersShow.user.email }}</h4>
 
-<h4>{{ usersShow.user }}</h4>
-<img ng-src="{{ usersShow.user.image }}" alt="profile image">
+    <img ng-src="{{ usersShow.user.image }}" alt="profile image">
+  </div>
+  <div class="col-sm-6">
+    <h3>Products</h3>
+  </div>
+</div>
