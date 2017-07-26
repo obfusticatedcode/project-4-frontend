@@ -354,6 +354,10 @@ box-shadow: 0px 0px 5px rgba(0,0,0, .75);
   margin-left: 20px;
 }
 
+.home-sub-title {
+  color: white;
+}
+
 .thumbnail > img, .thumbnail a > img {
 
     margin-right: auto;
@@ -418,7 +422,7 @@ background-size: cover;
 }
 
 #information {
-background: url(/images/man-in-bush.jpg) no-repeat center center fixed;
+background: url(/images/london.jpg) no-repeat center center fixed;
 display: table;
 height: 800px;
 position: relative;
