@@ -64,9 +64,22 @@ function ProductsNewCtrl(Product, User, $state) {
   vm.categories = [
     { name: 'Food & Drink' },
     { name: 'Sports'},
-    { name: 'Cars'},
+    { name: 'Automotive'},
     { name: 'Property'},
-    { name: 'Games'}
+    { name: 'Games'},
+    { name: 'Apparel'},
+    { name: 'Appliances'},
+    { name: 'Beauty'},
+    { name: 'Books'},
+    { name: 'Movies'},
+    { name: 'Electronics'},
+    { name: 'Furniture'},
+    { name: 'GiftCards'},
+    { name: 'Grocery'},
+    { name: 'Jewelry'},
+    { name: 'Music'},
+    { name: 'Shoes'},
+    { name: 'Software'}
   ];
   vm.myCategory = vm.categories[2]; // default option
 
@@ -119,25 +132,24 @@ function ProductsShowCtrl(Product, User,Feature, $stateParams, $state, $auth) {
   vm.deleteFeature = deleteFeature;
 
   function upvote(feature) {
-    console.log(feature);
     Feature
       .upvote({ id: feature.id })
       .$promise
-      .then((res) => {
-        console.log(res);
-        feature = res;
-      });
+      .then(updateFeatures);
   }
 
-
   function downvote(feature) {
-    console.log(feature);
     Feature
       .downvote({ id: feature.id })
       .$promise
-      .then((res) => {
-        console.log(res);
-        feature = res;
+      .then(updateFeatures);
+  }
+
+  function updateFeatures() {
+    Product.get($stateParams)
+      .$promise
+      .then((product) => {
+        vm.product.features = product.features;
       });
   }
 
@@ -172,9 +184,22 @@ function ProductsEditCtrl(Product, User, $state) {
   vm.categories = [
     { name: 'Food & Drink' },
     { name: 'Sports'},
-    { name: 'Cars'},
+    { name: 'Automotive'},
     { name: 'Property'},
-    { name: 'Games'}
+    { name: 'Games'},
+    { name: 'Apparel'},
+    { name: 'Appliances'},
+    { name: 'Beauty'},
+    { name: 'Books'},
+    { name: 'Movies'},
+    { name: 'Electronics'},
+    { name: 'Furniture'},
+    { name: 'GiftCards'},
+    { name: 'Grocery'},
+    { name: 'Jewelry'},
+    { name: 'Music'},
+    { name: 'Shoes'},
+    { name: 'Software'}
   ];
   vm.myCategory = vm.categories[2]; // default option
 

@@ -5,7 +5,7 @@
 
   <!-- user -->
   <div class="col-sm-2">
-      <h2>{{ productsShow.product.name }}</h2>
+    <h2>{{ productsShow.product.name }}</h2>
     <p>Posted by: <strong>{{ productsShow.product.user.username }}</strong></p>
     <img  class="user-image" ng-src="{{ productsShow.product.user.image }}" alt="">
   </div>
@@ -19,9 +19,11 @@
         <div class="thumbnail">
           <img class="" ng-src="{{ productsShow.product.image_src }}">
         </div>
+        <div class="edit-delete-buttons">
+          <button class="btn custom-button" ui-sref="productsEdit({id: productsShow.product.id})" ng-show="main.isAuthenticated() && main.currentUser.id === product.user.id" >Edit</button>
+          <button class="btn custom-button" ng-click="productsShow.delete()" ng-if="main.isAuthenticated() && main.currentUser.id === product.user.id">Delete</button>
+        </div>
 
-        <button class="btn" ui-sref="productsEdit({id: productsShow.product.id})" ng-show="main.isAuthenticated() && main.currentUser.id === product.user.id" >Edit</button>
-        <button class="btn" ng-click="productsShow.delete()" ng-if="main.isAuthenticated() && main.currentUser.id === product.user.id">Delete</button>
       </div>
     </div>
 
@@ -33,19 +35,19 @@
         <h3>Request a feature</h3>
         <form ng-submit="productsShow.addFeature()">
           <div class="form-group">
-            <input class="custom-input" type="text" name="title"
-              ng-model="productsShow.feature.title"
-              placeholder="Title"
-              autofocus>
+            <input class="form-control" type="text" name="title"
+            ng-model="productsShow.feature.title"
+            placeholder="Title"
+            autofocus>
           </div>
           <!--description -->
           <div class="">
             <textarea  class="form-control" type="text" name="body" ng-model="productsShow.feature.description" placeholder="Description"
             rows="5"></textarea>
           </div>
-
+          <hr>
           <div class="form-group">
-              <button class="btn btn-success">Submit</button>
+            <button class="btn btn-success form-control custom-button-full-width">Submit</button>
           </div>
 
         </form>
@@ -55,20 +57,25 @@
 
   </div>
   <div class="col-sm-4">
-      <h3>Feature Requests</h3>
-      <div class="list-group">
-        <span class="list-group-item list-group-item-action active">
-          Most liked requests  <span class="up-arrow">&#9650;</span>
-        </span>
-        <div class="most-liked-features" ng-repeat="feature in productsShow.product.features | orderBy:'-upvotes'">
-          <button type="button" class="list-group-item list-group-item-action"
-          ui-sref="featuresShow({ id: feature.id })">{{ feature.description }} - {{ feature.upvotes}}</button>
-          <div class="voting-buttons">
-            <a class="upvote" ng-click="productsShow.upvote(feature)">Upvote</a>
-            <a class="downvote" ng-click="productsShow.downvote(feature)">Downvote</a>
-          </div>
-        </div>
+    <h3>Feature Requests</h3>
+    <div class="list-group">
+      <span class="list-group-item list-group-item-action active">
+        Most liked requests  <span class="up-arrow">&#9650;</span>
+      </span>
+      <div class="most-liked-features" ng-repeat="feature in productsShow.product.features | orderBy:'-upvotes'">
+        <button type="button" class="list-group-item list-group-item-action"
+        ui-sref="featuresShow({ id: feature.id })">{{ feature.description }} - {{ feature.upvotes }}
+        </button>
+        <div class="voting-buttons">
+          <a class="upvote" ng-click="productsShow.upvote(feature)">Upvote</a>
+          <a class="downvote" ng-click="productsShow.downvote(feature)">Downvote</a>
+
+
+
       </div>
+    </div>
   </div>
+
+</div>
 
 </div>

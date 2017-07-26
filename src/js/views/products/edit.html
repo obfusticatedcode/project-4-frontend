@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <h1>Edit a product</h1>
 
-{{ productsEdit.product}}
-{{ productsEdit.currentUserId }}
-
 <div >
         <div class="row centered-form">
         <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
@@ -23,7 +20,7 @@
 
                 <!-- category-->
                 <label>
-                    <select name="category" id="category" class="nullable form-control custom-input" ng-model="productsEdit.product.category"
+                    <select name="category" id="category" class="nullable form-control" ng-model="productsEdit.product.category"
                         ng-options="category.name as category.name for category in productsEdit.categories">
                       <option value="">Category</option>
                     </select>

@@ -7,6 +7,11 @@ body{
   background: white;
   font-family: 'Raleway', sans-serif;
 }
+
+.custom-select {
+  width: 100%;
+  max-width: 350px;
+}
 /*variables*/
 $instagram: #8a3ab9;
 $facebook: #3B5998;
@@ -78,8 +83,8 @@ box-shadow: 0px 0px 5px rgba(0,0,0, .75);
 
 /* buttons */
 .custom-button {
-width:50%; /*same as the height*/
-height:50%; /*same as the width*/
+width:49%; /*same as the height*/
+height:49%; /*same as the width*/
 color:#fff;
 font-size:1em;
 /*set the border-radius at half the size of the width and height*/
@@ -90,6 +95,25 @@ border-radius: 5px;
 }
 /***NOW STYLE THE BUTTON'S HOVER STATE***/
 .custom-button:hover {
+/*reduce the size of the shadow to give a pushed effect*/
+-webkit-box-shadow: 0px 0px 5px rgba(0,0,0, .75);
+-moz-box-shadow: 0px 0px 5px rgba(0,0,0, .75);
+box-shadow: 0px 0px 5px rgba(0,0,0, .75);
+}
+/* buttons */
+.custom-button-full-width {
+width:100%; /*same as the height*/
+height:100%; /*same as the width*/
+color:#fff;
+font-size:1em;
+/*set the border-radius at half the size of the width and height*/
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+
+}
+/***NOW STYLE THE BUTTON'S HOVER STATE***/
+.custom-button-full-width:hover {
 /*reduce the size of the shadow to give a pushed effect*/
 -webkit-box-shadow: 0px 0px 5px rgba(0,0,0, .75);
 -moz-box-shadow: 0px 0px 5px rgba(0,0,0, .75);
@@ -273,6 +297,10 @@ box-shadow: 0px 0px 5px rgba(0,0,0, .75);
 
 .downvote {
   color: #FA0946;
+  margin-left: 20px;
+}
+
+.tweet {
   margin-left: 20px;
 }
 

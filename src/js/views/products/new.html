@@ -24,7 +24,7 @@
             <!-- category-->
             <label>
                 <select name="category" id="category" class="nullable form-control custom-input" ng-model="productsNew.product.category"
-                    ng-options="category.name as category.name for category in productsNew.categories">
+                    ng-options="category.name as category.name for category in productsNew.categories | orderBy: 'name'">
                   <option value="">Category</option>
                 </select>
             </label>
@@ -48,3 +48,9 @@
       </div>
     </div>
   </div>
+
+
+<!-- this method is causing a bug on the create new so it's commented out for now. -->
+<!-- # def set_product
+#   @product = Product.find(params[:id]) #this is cause a bug on the create new route.
+# end -->

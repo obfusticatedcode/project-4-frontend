@@ -64,6 +64,10 @@ function Router($stateProvider, $locationProvider) {
       url: '/login',
       templateUrl: '/js/views/auth/login.html',
       controller: 'LoginCtrl as login'
+    })
+    .state('home', {
+      url: '/',
+      templateUrl: '/js/views/statics/home.html'
     });
 
     // removed $urlRouterProvider as it was causing a facebook login bug I'll catch the invalid routes another way

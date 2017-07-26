@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-    <h4>{{ usersShow.user }}</h4>
+
 
 <h2>Your Profile</h2>
 <div class="row">
@@ -7,10 +7,22 @@
     <h4>{{ usersShow.user.username }}</h4>
     <h4>{{ usersShow.user.firstname }} {{ usersShow.user.lastname }}</h4>
     <h4>{{ usersShow.user.email }}</h4>
-
     <img ng-src="{{ usersShow.user.image }}" alt="profile image">
   </div>
-  <div class="col-sm-6">
+
+  <h2>Currently following</h2>
+  <div class="col-sm-3">
+
     <h3>Products</h3>
+    <div class="products-features" ng-repeat="product in usersShow.user.upvoted_items">
+      <h4>{{ product.name }}</h4>
+    </div>
   </div>
+  <div class="col-sm-3">
+    <h3>Features</h3>
+    <div class="products-features" ng-repeat="product in usersShow.user.upvoted_items">
+      <h4>{{ product.description }}</h4>
+    </div>
+  </div>
+
 </div>
