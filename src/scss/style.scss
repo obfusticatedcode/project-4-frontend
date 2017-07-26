@@ -8,8 +8,12 @@ body{
   background-image: url(./images/emmad-mazhari-216134.jpg);
   background: white;
   font-family: 'Raleway', sans-serif;
+  padding-top: 90px;
+  color: #50452a;
 }
-
+input {
+  border-radius: 25px !important;
+}
 .custom-select {
   width: 100%;
   max-width: 350px;
@@ -111,7 +115,7 @@ font-size:1em;
 /*set the border-radius at half the size of the width and height*/
 -webkit-border-radius: 5px;
 -moz-border-radius: 5px;
-border-radius: 5px;
+border-radius: 25px;
 
 }
 /***NOW STYLE THE BUTTON'S HOVER STATE***/
@@ -128,9 +132,9 @@ width:100%; /*same as the height*/
 line-height:60%; /*same as the width*/
 font-size:1em;
 /*set the border-radius at half the size of the width and height*/
--webkit-border-radius: 5px;
--moz-border-radius: 5px;
-border-radius: 5px;
+-webkit-border-radius: 25px;
+-moz-border-radius: 25px;
+border-radius: 25px;
 
 }
 
@@ -140,7 +144,17 @@ border-radius: 5px;
     padding: 6px 15px;
     border-radius: 20px;
 }
+/*forms*/
+.panel {
+    margin-bottom: 20px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 1px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    border-image: initial;
 
+}
 /*input fields*/
 .input-sm {
     height: 40px;
@@ -230,7 +244,42 @@ border-radius: 5px;
     user-select: none;
     background-image: none;
     border: 1px solid transparent;
-    border-radius: 4px;
+    border-radius: 25px;
+}
+
+.btn-info {
+    color: #fff;
+    background-color: #64B6BC;
+    border-color: #64B6BC;
+}
+
+.btn-info:hover {
+    color: #fff;
+    background-color: #64B6BC;
+    border-color: #64B6BC;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #9f9d53;
+    border-color: #9f9d53;
+}
+
+.btn-success:hover {
+    color: #fff;
+    background-color: #9f9d53;
+    border-color: #9f9d53;
+}
+.btn-danger {
+    color: #fff;
+    background-color: #b41809;
+    border-color: #b41809;
+}
+
+.btn-danger-delete:hover {
+    color: #fff;
+    background-color: #b41809;
+    border-color: #b41809;
 }
 
 /*Image input*/
@@ -264,8 +313,7 @@ box-shadow: 0px 0px 5px rgba(0,0,0, .75);
 .panel-heading {
   padding: 10px 15px;
   border-bottom: 1px solid transparent;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
+
 }
 
 .products {
@@ -329,7 +377,7 @@ box-shadow: 0px 0px 5px rgba(0,0,0, .75);
 }
 
 
-// parallax testing
+/* parallax */
 /* general styles */
 html, body {
 height: 100%;
@@ -347,6 +395,8 @@ width: 100%;
 display: table-cell;
 text-align: center;
 vertical-align: middle;
+height: 400px;
+color: white;
 }
 .text-vcenter h1 {
 font-size: 4.5em;
@@ -356,7 +406,7 @@ padding: 0;
 }
 /* additional sections */
 #home {
-background: url(/images/emmad-mazhari-216134.jpg) no-repeat center center fixed;
+background: url(/images/ocean.jpg) no-repeat center center fixed;
 display: table;
 height: 100%;
 position: relative;
@@ -368,7 +418,7 @@ background-size: cover;
 }
 
 #information {
-background: url(/images/jeff-sheldon-264922.jpg) no-repeat center center fixed;
+background: url(/images/man-in-bush.jpg) no-repeat center center fixed;
 display: table;
 height: 800px;
 position: relative;
@@ -381,8 +431,79 @@ background-size: cover;
 #information .panel {
 opacity: 0.85;
 }
+/* end parallax */
 
-nav {
-  position: absolute;
+/* navigation position*/
 
+.navbar-nav {
+    margin-top: -65px;
+
+    /* float: right; */
+    letter-spacing: 0px;
+    /* margin: 0; */
+    margin-bottom: auto;
 }
+/* navigation animation */
+
+div.container
+{
+  width: 100%;
+  background:  #ecd36e;
+  font-family: Raleway;
+  margin: 0 auto;
+	padding: 10em 3em;
+	text-align: center;
+}
+
+div.container a
+{
+    color: #FFF;
+
+    text-decoration: none;
+    font: 20px Raleway;
+    margin: 0px 10px;
+    padding: 10px 10px;
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
+}
+
+
+/* Border X get width  */
+div.borderXwidth a:before, div.borderXwidth a:after
+{
+    position: absolute;
+    opacity: 0;
+    width: 0%;
+    height: 2px;
+    content: '';
+    background: #FFF;
+    transition: all 0.3s;
+}
+div.borderXwidth
+{
+  overflow: hidden;
+  z-index: 3;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+}
+
+div.borderXwidth a:before
+{
+    left: 0px;
+    top: 0px;
+}
+
+div.borderXwidth a:after
+{
+    right: 0px;
+    bottom: 0px;
+}
+
+div.borderXwidth a:hover:before, div.borderXwidth a:hover:after
+{
+    opacity: 1;
+    width: 100%;
+}
+/* end navigation animation */

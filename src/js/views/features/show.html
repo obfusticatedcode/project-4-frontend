@@ -7,6 +7,11 @@
     {{ featuresShow.currentUser.email }}
   </div>
   <div class="col-sm-8">
+    <!-- image -->
+    <div class="thumbnail">
+      <img  ng-src="{{ featuresShow.feature.product.image_src }}" alt="">
+    </div>
+
     <h5>{{ featuresShow.feature.title }}</h5>
     <h5>{{ featuresShow.feature.description }}</h5>
     <h5>{{ featuresShow.feature.user.username }}</h5>

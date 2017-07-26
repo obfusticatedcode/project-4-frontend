@@ -36,7 +36,7 @@
         </span>
         <div class="trending" ng-repeat="product in products.all | orderBy:'-upvotes'">
           <button type="button" class="list-group-item list-group-item-action"
-          ui-sref="productsShow({ id: product.id })">{{ product.name }} - {{ product.upvotes }}</button>
+          ui-sref="productsShow({ id: product.id })">{{ product.name }} &#x27A1; {{ product.upvotes }}</button>
         </div>
       </div>
     </div>

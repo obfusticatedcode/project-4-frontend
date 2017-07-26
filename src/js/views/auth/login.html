@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-{{ login }}
 
 <div >
         <div class="row centered-form">
@@ -14,12 +13,14 @@
                 <!-- email address  -->
 			    			<div class="form-group">
 			    				<input type="email" name="email" id="email" class="form-control input-sm custom-input"
-                  placeholder="Email Address" ng-model="login.credentials.email">
+                  placeholder="Email Address" ng-model="login.credentials.email"
+                  required>
 			    			</div>
                 <!-- password -->
 			    			<div class="form-group">
 			    				<input type="password" name="password" id="password" class="form-control input-sm custom-input"
-                  placeholder="Password" ng-model="login.credentials.password">
+                  placeholder="Password" ng-model="login.credentials.password"
+                  required>
 			    			</div>
                 <!-- button -->
                 <div class="form-group">
@@ -51,8 +52,6 @@
                       id="instagram-round-botton">
                     </div>
                   </div>
-
-
                 </div>
 
               </div>

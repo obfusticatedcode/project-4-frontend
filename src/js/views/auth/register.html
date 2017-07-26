@@ -1,64 +1,84 @@
 <!DOCTYPE html>
 
-{{ register }}
-
 <div >
-        <div class="row centered-form">
-        <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
-        	<div class="panel panel-default custom-form">
-        		<div class="panel-heading">
-			    		<h3 class="panel-title">Please register </h3>
-			 			</div>
-			 			<div class="panel-body">
-			    		<form  ng-submit="register.submit()">
-			    			<div class="row">
-			    				<div class="col-xs-6 col-sm-6 col-md-6">
-                    <!-- firstname -->
-			    					<div class="form-group">
-			                <input type="text" name="firstname" id="firstname" class="form-control custom-input"
-                      placeholder="First Name" ng-model="register.user.firstname">
-			    					</div>
-			    				</div>
-                  <!-- lastname -->
-			    				<div class="col-xs-6 col-sm-6 col-md-6">
-			    					<div class="form-group">
-			    						<input type="text" name="lastname" id="lastname" class="form-control custom-input"
-                      placeholder="Last Name" ng-model="register.user.lastname">
-			    					</div>
-			    				</div>
-			    			</div>
-                <!-- username -->
-			    			<div class="form-group">
-			    				<input type="text" name="username" id="username" class="form-control custom-input"
-                  placeholder="Username" ng-model="register.user.username">
-			    			</div>
-                <!-- email address-->
-			    			<div class="form-group">
-			    				<input type="email" name="email" id="email" class="form-control custom-input"
-                  placeholder="Email Address" ng-model="register.user.email">
-			    			</div>
-                <!-- password -->
-			    			<div class="row">
-			    				<div class="col-xs-6 col-sm-6 col-md-6">
-			    					<div class="form-group">
-			    						<input type="password" name="password" id="password" class="form-control custom-input"
-                      placeholder="Password" ng-model="register.user.password">
-			    					</div>
-			    				</div>
-                  <!-- confirm password -->
-			    				<div class="col-xs-6 col-sm-6 col-md-6">
-			    					<div class="form-group">
-			    						<input type="password" name="password_confirmation" id="password_confirmation" class="form-control custom-input"
-                      placeholder="Confirm Password" ng-model="register.user.password_confirmation">
-			    					</div>
-			    				</div>
-			    			</div>
-                <!-- button -->
-			    			<input type="submit" value="Register" class="btn btn-info btn-block custom-button">
+  <div class="row centered-form">
+    <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+      <div class="panel panel-default ">
+        <div class="panel-heading">
+          <h3 class="panel-title">Please register</h3>
+        </div>
+        <div class="panel-body">
+          <!-- form name -->
+          <form  name="register.registerForm" ng-submit="register.submit()" novalidate>
+            <div class="row">
+              <div class="col-xs-6 col-sm-6 col-md-6">
+                <!-- firstname -->
+                <div class="form-group">
+                  <input type="text" name="firstname" id="firstname" class="form-control custom-input"
+                  placeholder="First Name" ng-model="register.user.firstname"
+                  required>
+                </div>
+              </div>
+              <!-- lastname -->
+              <div class="col-xs-6 col-sm-6 col-md-6">
+                <div class="form-group">
+                  <input type="text" name="lastname" id="lastname" class="form-control custom-input"
+                  placeholder="Last Name" ng-model="register.user.lastname"
+                  required>
+                </div>
+              </div>
+            </div>
+            <!-- username -->
+            <div class="form-group">
+              <input type="text" name="username" id="username" class="form-control custom-input"
+              placeholder="Username" ng-model="register.user.username"
+              required>
+            </div>
+            <!-- ng-messages username-->
+            <div class="error-messages" ng-messages="register.registerForm.username.$error" ng-show="register.registerForm.$submitted || register.registerForm.username.$touched" ng-messages-multiple>
+              <div ng-message="required">
+                <p class="help is-danger">You forgot to enter the username</p>
+              </div>
+              <div ng-message="username">
+                <p class="help is-danger">You didn't enter the username correctly</p>
+              </div>
+              <div ng-message="minlength">
+                <p class="help is-danger">The username you entered is too short</p>
+              </div>
+              <div ng-message="maxlength">
+                <p class="help is-danger">The username you entered is too long</p>
+              </div>
+            </div>
+            <!-- email address-->
+            <div class="form-group">
+              <input type="email" name="email" id="email" class="form-control custom-input"
+              placeholder="Email Address" ng-model="register.user.email"
+              required>
+            </div>
+            <!-- password -->
+            <div class="row">
+              <div class="col-xs-6 col-sm-6 col-md-6">
+                <div class="form-group">
+                  <input type="password" name="password" id="password" class="form-control custom-input"
+                  placeholder="Password" ng-model="register.user.password"
+                  required>
+                </div>
+              </div>
+              <!-- confirm password -->
+              <div class="col-xs-6 col-sm-6 col-md-6">
+                <div class="form-group">
+                  <input type="password" name="password_confirmation" id="password_confirmation" class="form-control custom-input"
+                  placeholder="Confirm Password" ng-model="register.user.password_confirmation"
+                  required>
+                </div>
+              </div>
+            </div>
+            <!-- button -->
+            <input type="submit" value="Register" class="btn btn-info btn-block custom-button">
 
-			    		</form>
-			    	</div>
-	    		</div>
-    		</div>
-    	</div>
+          </form>
+        </div>
+      </div>
     </div>
+  </div>
+</div>
