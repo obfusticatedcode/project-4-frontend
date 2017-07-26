@@ -21,6 +21,7 @@ function ProductsIndexCtrl(Product, User) {
         console.log(res);
         product = res;
       });
+    toggle();
   }
 
 
@@ -30,6 +31,10 @@ function ProductsIndexCtrl(Product, User) {
         console.log(res);
         product = res;
       });
+  }
+
+  function toggle() {
+    vm.heart = false;
   }
 
   vm.upvote = upvote;

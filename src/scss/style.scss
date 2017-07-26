@@ -511,3 +511,40 @@ div.borderXwidth a:hover:before, div.borderXwidth a:hover:after
     width: 100%;
 }
 /* end navigation animation */
+
+/* big quotes*/
+blockquote {
+font-family: Georgia, serif;
+font-size: 18px;
+font-style: italic;
+line-height: 1.45;
+position: relative;
+color: #383838;
+}
+
+blockquote:before {
+display: block;
+padding-left: 10px;
+content: "\201C";
+font-size: 80px;
+position: absolute;
+left: 265px;
+top: -20px;
+color: #7a7a7a;
+}
+
+blockquote cite {
+color: #999999;
+font-size: 14px;
+display: block;
+margin-top: 5px;
+}
+
+blockquote cite:before {
+content: "\2014 \2009";
+}
+
+:focus::-webkit-input-placeholder {color: #c98e8b}
+:focus::-moz-placeholder          {color: #c98e8b}
+:focus:-moz-placeholder           {color: #c98e8b}
+:focus:-ms-input-placeholder      {color: #c98e8b}

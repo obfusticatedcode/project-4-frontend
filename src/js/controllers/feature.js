@@ -91,23 +91,26 @@ function FeaturesShowCtrl(Feature, User,Comment, $stateParams, $state, $auth) {
 
 
 //edit
-FeaturesEditCtrl.$inject = ['Feature', 'User','$stateParams','User', '$state'];
-function FeaturesEditCtrl(Feature, User, $stateParams, $state) {
+FeaturesEditCtrl.$inject = ['Feature', 'User', '$state'];
+function FeaturesEditCtrl(Feature, User, $state) {
   const vm = this;
+
+
+  Feature.get($state.params).$promise.then((feature)=> {
+    vm.feature = feature;
+  });
 
   vm.users = User.query();
 
-  vm.feature = Feature.get($stateParams);
-  console.log($stateParams);
   function featuresUpdate() {
-
-    vm.feature
-    .$update({ id: vm.feature.id }, vm.feature)
-    .then(() => $state.go('featuresShow', $stateParams));
+    Feature
+    .update({ id: vm.feature.id }, vm.feature)
+    .$promise
+    .then(() => $state.go('featuresShow', { id: vm.feature.id }));
 
   }
 
   vm.update = featuresUpdate;
 
 
-}//end of the featuresEditCtrl function
+}//end of the productsEditCtrl function
