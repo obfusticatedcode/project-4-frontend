@@ -108,7 +108,12 @@ border-radius: 5px;
 
 }
 
-
+.btn-circle {
+    font-weight: bold;
+    font-size: 12px;
+    padding: 6px 15px;
+    border-radius: 20px;
+}
 
 /*input fields*/
 .input-sm {
@@ -250,6 +255,14 @@ box-shadow: 0px 0px 5px rgba(0,0,0, .75);
   cursor: pointer;
 }
 
+.user-image {
+  display: inline-block;
+  max-width: 120px;
+  border-radius: none;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
 .up-arrow {
   color: #5CB85C;
 }

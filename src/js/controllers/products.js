@@ -7,7 +7,7 @@ angular
 .controller('ProductsEditCtrl', ProductsEditCtrl);
 
 //index
-ProductsIndexCtrl.$inject = ['Product', 'User'];
+ProductsIndexCtrl.$inject = ['Product', 'User', 'votes'];
 function ProductsIndexCtrl(Product, User) {
   const vm = this;
 
@@ -15,14 +15,12 @@ function ProductsIndexCtrl(Product, User) {
   vm.users = User.query();
 
   function upvote(product) {
-
     product.$upvote()
       .then((res) => {
         console.log(res);
         product = res;
       });
   }
-
 
 
   function downvote(product) {
@@ -35,7 +33,6 @@ function ProductsIndexCtrl(Product, User) {
 
   vm.upvote = upvote;
   vm.downvote = downvote;
-
 
 
 }
@@ -62,14 +59,15 @@ function ProductsNewCtrl(Product, User, $state) {
   }
 
 
-  // testing again
+  //array of categories
   vm.categories = [
     { name: 'Food & Drink' },
     { name: 'Sports'},
     { name: 'Cars'},
-    { name: 'Property'}
+    { name: 'Property'},
+    { name: 'Games'}
   ];
-  vm.myCategory = vm.categories[2]; // red
+  vm.myCategory = vm.categories[2]; // default option
 
 }
 
@@ -118,6 +116,27 @@ function ProductsShowCtrl(Product, User,Feature, $stateParams, $state, $auth) {
   }
 
   vm.deleteFeature = deleteFeature;
+
+  function upvote(feature) {
+    feature.$upvote()
+      .then((res) => {
+        console.log(res);
+        feature = res;
+      });
+  }
+
+
+  function downvote(feature) {
+    console.log(feature);
+    feature.$downvote()
+      .then((res) => {
+        console.log(res);
+        feature = res;
+      });
+  }
+
+  vm.upvote = upvote;
+  vm.downvote = downvote;
 }
 
 

@@ -54,7 +54,7 @@ function FeaturesShowCtrl(Feature, User,Comment, $stateParams, $state, $auth) {
     vm.feature
     .$remove()
     .then(() => {
-      $state.go('featuresIndex');
+      $state.go('productsIndex');
     });
   }
 
