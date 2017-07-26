@@ -15,16 +15,17 @@
     <h5>{{ featuresShow.feature.title }}</h5>
     <h5>{{ featuresShow.feature.description }}</h5>
     <h5>{{ featuresShow.feature.user.username }}</h5>
-    <button class="btn custom-button" ui-sref="featuresEdit({id: featuresShow.feature.id})" ng-show="main.isAuthenticated() && main.currentUser.id === product.user.id" >Edit</button>
-    <button class="btn custom-button" ng-click="featuresShow.delete()">Delete</button>
+    <button class="btn custom-button " ui-sref="featuresEdit({id: featuresShow.feature.id})" ng-show="main.isAuthenticated() && main.currentUserId === product.user.id" >Edit</button>
+    <button class="btn custom-button btn-danger-delete" ng-show="main.isAuthenticated() && main.currentUserId === product.user.id" ng-click="featuresShow.delete()">Delete</button>
 
     <!-- comments -->
     <div class="comments">
 
         <div class="">
           <h4>Comments</h4>
-            <p ng-repeat="comment in featuresShow.feature.comments">{{ comment.description }} - <strong>{{ comment.user.username }}</strong>
-            <button class="btn custom-button" ng-click="featuresShow.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUser.id === comment.currentUser.id">Delete</button></p>
+            <p ng-repeat="comment in featuresShow.feature.comments">{{ comment.description }}  <strong>{{ comment.user.username }}</strong>
+
+            <button class="btn custom-button btn-danger-delete" ng-click="featuresShow.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUserId === featuresShow.feature.user.id">Delete</button></p>
         </div>
 
           <form ng-submit="featuresShow.addComment()">

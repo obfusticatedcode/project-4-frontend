@@ -4,10 +4,19 @@
 <h2>Your Profile</h2>
 <div class="row">
   <div class="col-sm-6">
-    <h4>{{ usersShow.user.username }}</h4>
-    <h4>{{ usersShow.user.firstname }} {{ usersShow.user.lastname }}</h4>
-    <h4>{{ usersShow.user.email }}</h4>
-    <img ng-src="{{ usersShow.user.image }}" alt="profile image">
+
+    <form ng-submit="">
+      <h4>{{ usersShow.user.username }}</h4>
+      <h4>{{ usersShow.user.firstname }} {{ usersShow.user.lastname }}</h4>
+      <h4>{{ usersShow.user.email }}</h4>
+      <img ng-src="{{ usersShow.user.image }}" alt="profile image">
+      <!-- edit and delete buttons -->
+      <div class="edit-delete-buttons">
+        <button class="btn custom-button" ui-sref="usersEdit({id: usersShow.user.id})" ng-if="main.isAuthenticated() && main.currentUserId === usersShow.user.id" >Edit</button>
+        <button class="btn custom-button btn-danger" ng-click="usersShow.delete()" ng-if="main.isAuthenticated() && main.currentUserId === usersShow.user.id">Delete</button>
+      </div>
+    </form>
+
   </div>
 
   <h2>Currently following</h2>
@@ -24,9 +33,5 @@
       <h5>{{ product.description }}</h5>
     </div>
   </div>
-  <!-- edit and delete buttons -->
-  <div class="edit-delete-buttons">
-    <button class="btn custom-button" ui-sref="usersEdit({id: usersShow.user.id})" ng-show="main.isAuthenticated() && main.currentUser.id === userShow.user.id" >Edit</button>
-    <button class="btn custom-button" ng-click="usersShow.delete()" ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id">Delete</button>
-  </div>
+
 </div>

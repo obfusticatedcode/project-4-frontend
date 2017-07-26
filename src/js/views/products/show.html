@@ -20,8 +20,9 @@
           <img class="" ng-src="{{ productsShow.product.image_src }}">
         </div>
         <div class="edit-delete-buttons">
-          <button class="btn custom-button" ui-sref="productsEdit({id: productsShow.product.id})" ng-show="main.isAuthenticated() && main.currentUser.id === product.user.id" >Edit</button>
-          <button class="btn custom-button btn-danger-delete" ng-click="productsShow.delete()" ng-if="main.isAuthenticated() && main.currentUser.id === product.user.id">Delete</button>
+          <button class="btn custom-button" ui-sref="productsEdit({id: productsShow.product.id})" ng-show="main.isAuthenticated() && main.currentUserId === productsShow.product.user.id" >Edit</button>
+          <button class="btn custom-button btn-danger-delete" ng-click="productsShow.delete()" ng-if="main.isAuthenticated() && main.currentUserId === productsShow.product.user.id">Delete</button>
+
         </div>
 
       </div>
@@ -65,7 +66,9 @@
       </span>
       <div class="most-liked-features" ng-repeat="feature in productsShow.product.features | orderBy:'-upvotes'">
         <button type="button" class="list-group-item list-group-item-action"
-        ui-sref="featuresShow({ id: feature.id })">{{ feature.description }} &#x27A1; {{ feature.upvotes }}
+        ui-sref="featuresShow({ id: feature.id })"
+        >{{ feature.description }} &#x27A1; {{ feature.upvotes }}
+
         </button>
         <div class="voting-buttons">
           <a class="upvote" ng-click="productsShow.upvote(feature)">Upvote</a>
