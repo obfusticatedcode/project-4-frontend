@@ -297,7 +297,7 @@ border-radius: 25px;
 }
 
 .image-upload-hide-div {
-  
+
 }
 
 /***NOW STYLE THE BUTTON'S HOVER STATE***/
@@ -442,6 +442,13 @@ opacity: 0.85;
 /* end parallax */
 
 /* navigation position*/
+.navbar {
+    position: relative;
+    min-height: 50px;
+    margin-top: -50px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+}
 
 .navbar-nav {
     margin-top: -65px;
@@ -495,6 +502,7 @@ div.borderXwidth
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
+  margin-top: -50px;
 }
 
 div.borderXwidth a:before
@@ -513,6 +521,10 @@ div.borderXwidth a:hover:before, div.borderXwidth a:hover:after
 {
     opacity: 1;
     width: 100%;
+}
+
+.ul-wrapper {
+  margin-left: 40px;
 }
 /* end navigation animation */
 
