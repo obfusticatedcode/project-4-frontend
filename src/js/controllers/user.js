@@ -1,6 +1,7 @@
 angular
   .module('desireApp')
-  .controller('UsersShowCtrl',UsersShowCtrl);
+  .controller('UsersShowCtrl',UsersShowCtrl)
+  .controller('UsersEditCtrl',UsersEditCtrl);
 
 UsersShowCtrl.$inject = ['$auth', 'User', '$state'];
 function UsersShowCtrl($auth, User, $state) {

@@ -5,17 +5,17 @@
 <div class="row">
   <div class="col-sm-6">
 
-    <form ng-submit="">
+    <div class="col-sm-8">
       <h4>{{ usersShow.user.username }}</h4>
       <h4>{{ usersShow.user.firstname }} {{ usersShow.user.lastname }}</h4>
       <h4>{{ usersShow.user.email }}</h4>
-      <img ng-src="{{ usersShow.user.image }}" alt="profile image">
+      <img ng-src="{{ usersShow.user.image_src }}" alt="profile image">
       <!-- edit and delete buttons -->
       <div class="edit-delete-buttons">
         <button class="btn custom-button" ui-sref="usersEdit({id: usersShow.user.id})" ng-if="main.isAuthenticated() && main.currentUserId === usersShow.user.id" >Edit</button>
         <button class="btn custom-button btn-danger" ng-click="usersShow.delete()" ng-if="main.isAuthenticated() && main.currentUserId === usersShow.user.id">Delete</button>
       </div>
-    </form>
+    </div>
 
   </div>
 
@@ -30,7 +30,9 @@
   <div class="col-sm-3">
     <h3>Features</h3>
     <div class="products-features" ng-repeat="product in usersShow.user.upvoted_items">
-      <h5>{{ product.description }}</h5>
+      <h5 ui-sref="featuresShow({ id: feature.id })">{{ product.description }}</h5>
+      {{ featuresShow }}
+      {{ usersShow }}
     </div>
   </div>
 

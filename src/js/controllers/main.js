@@ -44,6 +44,7 @@ function MainCtrl($http, API_URL, $rootScope, $state, $auth, $transitions) {
     $state.go('login');
   }
 
+
   vm.logout = logout;
 
 }

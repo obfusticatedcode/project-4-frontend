@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+{{ register }}
 <div >
   <div class="row centered-form">
     <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
@@ -9,7 +9,7 @@
         </div>
         <div class="panel-body">
           <!-- form name -->
-          <form  name="register.registerForm" ng-submit="register.submit()" novalidate>
+          <form  ng-submit="register.submit()" >
             <div class="row">
               <div class="col-xs-6 col-sm-6 col-md-6">
                 <!-- firstname -->
@@ -34,21 +34,7 @@
               placeholder="Username" ng-model="register.user.username"
               required>
             </div>
-            <!-- ng-messages username-->
-            <div class="error-messages" ng-messages="register.registerForm.username.$error" ng-show="register.registerForm.$submitted || register.registerForm.username.$touched" ng-messages-multiple>
-              <div ng-message="required">
-                <p class="help is-danger">You forgot to enter the username</p>
-              </div>
-              <div ng-message="username">
-                <p class="help is-danger">You didn't enter the username correctly</p>
-              </div>
-              <div ng-message="minlength">
-                <p class="help is-danger">The username you entered is too short</p>
-              </div>
-              <div ng-message="maxlength">
-                <p class="help is-danger">The username you entered is too long</p>
-              </div>
-            </div>
+
             <!-- email address-->
             <div class="form-group">
               <input type="email" name="email" id="email" class="form-control custom-input"
@@ -81,6 +67,10 @@
               class="form-control image-upload"
               placeholder="Image"
               ng-model="register.user.base64" hidden>
+              <!-- image preview -->
+              <div class="thumbnail image-upload-hide-div">
+                <img ng-src="{{ register.user.base64 }}" >
+              </div>
             </div>
 
             <!-- button -->
