@@ -42,15 +42,23 @@ function FeaturesNewCtrl(Feature, User, $state) {
 }
 
 //show
-FeaturesShowCtrl.$inject = ['Feature', 'User','Comment','$stateParams','$state', '$auth'];
-function FeaturesShowCtrl(Feature, User,Comment, $stateParams, $state, $auth) {
+FeaturesShowCtrl.$inject = ['Feature', 'User','Comment','$stateParams','$state', '$auth', 'tone'];
+function FeaturesShowCtrl(Feature, User,Comment, $stateParams, $state, $auth, tone) {
   const vm = this;
   if ($auth.getPayload()) vm.currentUser = User.get({ id: $auth.getPayload().id });
 
-  vm.feature = Feature.get($stateParams);
+  Feature.get($stateParams)
+          .$promise
+          .then((feature) => {
+            vm.feature = feature;
+            console.log('This is a feature',feature.description);
+            tone.getTone(feature.description)
+                .then((response) => {
+                  console.log(response);
+                });
+          });
 
   function featureDelete(){
-
     vm.feature
     .$remove()
     .then(() => {
@@ -87,6 +95,15 @@ function FeaturesShowCtrl(Feature, User,Comment, $stateParams, $state, $auth) {
   }
 
   vm.deleteComment = deleteComment;
+
+  // testing
+
+  function hello(){
+    console.log(`hello`);
+  }
+
+  vm.hello = hello;
+
 }
 
 
