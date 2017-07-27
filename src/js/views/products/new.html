@@ -33,6 +33,11 @@
                 class="form-control image-upload"
                 placeholder="Image"
                 ng-model="productsNew.product.base64" hidden>
+                <!-- image preview -->
+                <div class="thumbnail image-upload-hide-div">
+                  <img ng-src="{{ productsNew.product.base64 }}" hidden>
+                </div>
+
               </div>
 
               <!-- button -->

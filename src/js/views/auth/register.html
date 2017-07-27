@@ -73,6 +73,16 @@
                 </div>
               </div>
             </div>
+            <!-- Image -->
+
+            <div class="form-group">
+              <label for="base64" class="btn btn-success image-upload-button" required>Upload a photo</label>
+              <input type="file" base64 name="base64" id="base64"
+              class="form-control image-upload"
+              placeholder="Image"
+              ng-model="register.user.base64" hidden>
+            </div>
+
             <!-- button -->
             <input type="submit" value="Register" class="btn btn-info btn-block custom-button">
 

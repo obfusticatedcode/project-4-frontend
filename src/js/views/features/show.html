@@ -3,16 +3,18 @@
 <h1>{{ featuresShow.feature.product.name }} Feature Request</h1>
 
 <div class="row">
+  <!-- user -->
   <div class="col-sm-3">
     {{ featuresShow.currentUser.email }}
   </div>
+
   <div class="col-sm-8">
     <!-- image -->
     <div class="thumbnail">
       <img  ng-src="{{ featuresShow.feature.product.image_src }}" alt="">
     </div>
 
-    <h5>{{ featuresShow.feature.title }}</h5>
+    <h4>{{ featuresShow.feature.title }}</h4>
     <h5>{{ featuresShow.feature.description }}</h5>
     <h5>{{ featuresShow.feature.user.username }}</h5>
     <button class="btn custom-button " ui-sref="featuresEdit({id: featuresShow.feature.id})" ng-show="main.isAuthenticated() && main.currentUserId === product.user.id" >Edit</button>
@@ -21,27 +23,27 @@
     <!-- comments -->
     <div class="comments">
 
-        <div class="">
-          <h4>Comments</h4>
-            <p ng-repeat="comment in featuresShow.feature.comments">{{ comment.description }}  <strong>{{ comment.user.username }}</strong>
+      <div class="">
+        <h4>Comments</h4>
+        <p ng-repeat="comment in featuresShow.feature.comments">{{ comment.description }}  <strong>{{ comment.user.username }}</strong>
 
-            <button class="btn custom-button btn-danger-delete" ng-click="featuresShow.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUserId === featuresShow.feature.user.id">Delete</button></p>
+          <button class="btn custom-button btn-danger-delete" ng-click="featuresShow.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUserId === featuresShow.feature.user.id">Delete</button></p>
         </div>
 
-          <form ng-submit="featuresShow.addComment()">
-            <textarea class="form-control" type="text" name="body"
-              ng-model="featuresShow.comment.description"
-              placeholder="Add a comment"></textarea>
-              <hr>
-            <button class="btn btn-success form-control custom-button-full-width" ng-if="main.isAuthenticated()">Submit</button>
-          </form>
+        <form ng-submit="featuresShow.addComment()">
+          <textarea class="form-control" type="text" name="body"
+          ng-model="featuresShow.comment.description"
+          placeholder="Add a comment"></textarea>
+          <hr>
+          <button class="btn btn-success form-control custom-button-full-width" ng-if="main.isAuthenticated()">Submit</button>
+        </form>
+
+
+      </div>
+
+    </div>
+    <div class="col-sm-1">
 
 
     </div>
-
   </div>
-  <div class="col-sm-1">
-
-
-  </div>
-</div>
