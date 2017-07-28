@@ -10,7 +10,10 @@
       <h4>{{ usersShow.user.firstname }} {{ usersShow.user.lastname }}</h4>
       <h4>{{ usersShow.user.email }}</h4>
       <!-- image -->
-      <img ng-src="{{ usersShow.user.image_src }}" alt="profile image">
+      <div class="thumbnail">
+        <img ng-src="{{ usersShow.user.image_src }}" alt="profile image">
+      </div>
+
       <!-- edit and delete buttons -->
       <div class="edit-delete-buttons">
         <button class="btn custom-button" ui-sref="usersEdit({id: usersShow.user.id})" ng-if="main.isAuthenticated() && main.currentUserId === usersShow.user.id" >Edit</button>
@@ -19,7 +22,7 @@
     </div>
 
   </div>
-  
+
   <h2>Currently following</h2>
   <div class="col-sm-3">
 

@@ -26,15 +26,18 @@ UsersEditCtrl.$inject = ['User',  '$state'];
 function UsersEditCtrl(User, $state) {
   const vm = this;
 
-  vm.user = User.get($state.params);
+  User.get($state.params).$promise.then((user)=> {
+    vm.user = user;
+    console.log(vm.user);
+  });
 
   function usersUpdate() {
-    if (vm.userForm.$valid) {
-      vm.user
-        .$update()
-        .then(() => $state.go('usersShow', $state.params));
-    }
+    User
+      .update({ id: vm.user.id }, vm.user)
+      .$promise
+      .then(() => $state.go('usersShow', { id: vm.user.id }));
   }
+
 
   vm.update = usersUpdate;
 }
