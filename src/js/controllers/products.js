@@ -15,10 +15,8 @@ function ProductsIndexCtrl(Product, User) {
   vm.users = User.query();
 
   function upvote(product) {
-    console.log(product);
     product.$upvote()
       .then((res) => {
-        console.log(res);
         product = res;
       });
   }
@@ -27,7 +25,6 @@ function ProductsIndexCtrl(Product, User) {
   function downvote(product) {
     product.$downvote()
       .then((res) => {
-        console.log(res);
         product = res;
       });
   }
