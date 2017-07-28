@@ -13,40 +13,39 @@
   <!-- inject:css -->
   <!-- endinject -->
 </head>
-<!-- TODO: make partials and keep the index fresh and clean -->
-<!-- header -->
-<header class="">
-  <nav class="navbar navbar-default " role="navigation">
-    <div class="navbar-header ">
-      <button type="button" class="navbar-toggle" ng-click="main.isNavCollapsed = !main.isNavCollapsed">
-        <div class="menu">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </div>
-      </button>
 
-    </div>
+<body ng-controller="MainCtrl as main" class="content">
+  <!-- TODO: make partials and keep the index fresh and clean -->
+  <!-- header -->
+  <header class="">
+    <nav class="navbar navbar-default " role="navigation">
+      <div class="navbar-header ">
+        <button type="button" class="navbar-toggle" ng-click="main.isNavCollapsed = !main.isNavCollapsed">
+          <div class="menu">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </div>
+        </button>
 
-      <div class="collapse navbar-collapse container borderXwidth" uib-collapse="main.isNavCollapsed">
-        <div class="ul-wrapper">
-        <ul class="nav navbar-nav ">
-          <li><a class="navbar-brand" ui-sref="home">Home</a></li>
-          <li ng-if="main.isAuthenticated()"><a ui-sref="productsIndex" ui-sref-active="active">Products</a></li>
-          <li ng-if="main.isAuthenticated()"><a ui-sref="usersShow({ id: main.currentUserId })" ui-sref-active="active" >Profile</a></li>
-          <li ng-if="main.isAuthenticated()"><a ui-sref="productsNew" ui-sref-active="active">Add Product</a></li>
-          <li ng-if="!main.isAuthenticated()"><a ui-sref="login" ui-sref-active="active">Login</a></li>
-          <li ng-if="!main.isAuthenticated()"><a ui-sref="register" ui-sref-active="active">Register</a></li>
-          <li ng-if="main.isAuthenticated()" ng-click="main.logout()" ><a ui-sref="logout" ui-sref-active="active">Logout</a></li>
-        </ul>
       </div>
-    </div>
 
-  </nav>
-</header>
-<body ng-controller="MainCtrl as main">
-
+        <div class="collapse navbar-collapse container borderXwidth" uib-collapse="main.isNavCollapsed">
+          <div class="ul-wrapper">
+          <ul class="nav navbar-nav ">
+            <li><a class="navbar-brand" ui-sref="home">Home</a></li>
+            <li ng-if="main.isAuthenticated()"><a ui-sref="productsIndex" ui-sref-active="active">Products</a></li>
+            <li ng-if="main.isAuthenticated()"><a ui-sref="usersShow({ id: main.currentUserId })" ui-sref-active="active" >Profile</a></li>
+            <li ng-if="main.isAuthenticated()"><a ui-sref="productsNew" ui-sref-active="active">Add Product</a></li>
+            <li ng-if="!main.isAuthenticated()"><a ui-sref="login" ui-sref-active="active">Login</a></li>
+            <li ng-if="!main.isAuthenticated()"><a ui-sref="register" ui-sref-active="active">Register</a></li>
+            <li ng-if="main.isAuthenticated()" ng-click="main.logout()" ><a ui-sref="logout" ui-sref-active="active">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
   <!-- main -->
   <div class="message" ng-if="main.message">{{ main.message }}</div>
 
@@ -54,11 +53,9 @@
 
 
   <!-- footer -->
-  <footer>
-    <div class="col-sm-12">
+    <footer>
 
-    </div>
-  </footer>
+    </footer>
 
 </body>
 </html>

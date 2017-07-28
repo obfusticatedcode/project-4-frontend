@@ -22,17 +22,17 @@ function UsersShowCtrl($auth, User, $state) {
 
 
 //edit/update
-UsersEditCtrl.$inject = ['User', '$stateParams', '$state'];
-function UsersEditCtrl(User, $stateParams, $state) {
+UsersEditCtrl.$inject = ['User',  '$state'];
+function UsersEditCtrl(User, $state) {
   const vm = this;
 
-  vm.user = User.get($stateParams);
+  vm.user = User.get($state.params);
 
   function usersUpdate() {
     if (vm.userForm.$valid) {
       vm.user
         .$update()
-        .then(() => $state.go('usersShow', $stateParams));
+        .then(() => $state.go('usersShow', $state.params));
     }
   }
 

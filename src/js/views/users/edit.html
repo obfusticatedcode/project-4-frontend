@@ -1,3 +1,84 @@
 <!DOCTYPE html>
 
-<h1>Edit</h1>
+<div >
+  <div class="row centered-form">
+    <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+      <div class="panel panel-default ">
+        <div class="panel-heading">
+          <h3 class="panel-title">Edit your profile</h3>
+        </div>
+        <div class="panel-body">
+          <!-- form name -->
+          <form  ng-submit="userEdit.user.update()" >
+            <div class="row">
+              <div class="col-xs-6 col-sm-6 col-md-6">
+                <!-- firstname -->
+                <div class="form-group">
+                  <input type="text" name="firstname" id="firstname" class="form-control custom-input"
+                  placeholder="First Name" ng-model="usersEdit.user.firstname"
+                  required>
+                </div>
+              </div>
+              <!-- lastname -->
+              <div class="col-xs-6 col-sm-6 col-md-6">
+                <div class="form-group">
+                  <input type="text" name="lastname" id="lastname" class="form-control custom-input"
+                  placeholder="Last Name" ng-model="usersEdit.user.lastname"
+                  required>
+                </div>
+              </div>
+            </div>
+            <!-- username -->
+            <div class="form-group">
+              <input type="text" name="username" id="username" class="form-control custom-input"
+              placeholder="Username" ng-model="usersEdit.user.username"
+              required>
+            </div>
+
+            <!-- email address-->
+            <div class="form-group">
+              <input type="email" name="email" id="email" class="form-control custom-input"
+              placeholder="Email Address" ng-model="usersEdit.user.email"
+              required>
+            </div>
+            <!-- password -->
+            <div class="row">
+              <div class="col-xs-6 col-sm-6 col-md-6">
+                <div class="form-group">
+                  <input type="password" name="password" id="password" class="form-control custom-input"
+                  placeholder="Password" ng-model="usersEdit.user.password"
+                  required>
+                </div>
+              </div>
+              <!-- confirm password -->
+              <div class="col-xs-6 col-sm-6 col-md-6">
+                <div class="form-group">
+                  <input type="password" name="password_confirmation" id="password_confirmation" class="form-control custom-input"
+                  placeholder="Confirm Password" ng-model="usersEdit.user.password_confirmation"
+                  required>
+                </div>
+              </div>
+            </div>
+            <!-- Image -->
+
+            <div class="form-group">
+              <label for="base64" class="btn btn-success image-upload-button" required>Upload a photo</label>
+              <input type="file" base64 name="base64" id="base64"
+              class="form-control image-upload"
+              placeholder="Image"
+              ng-model="usersEdit.user.base64" hidden>
+              <!-- image preview -->
+              <div class="thumbnail image-upload-hide-div">
+                <img ng-src="{{ usersEdit.user.base64 }}" >
+              </div>
+            </div>
+
+            <!-- button -->
+            <input type="submit" value="Save" class="btn btn-info btn-block custom-button">
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

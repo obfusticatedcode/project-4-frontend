@@ -34,8 +34,11 @@
                 placeholder="Image"
                 ng-model="productsNew.product.base64" hidden>
                 <!-- image preview -->
-                <div class="thumbnail image-upload-hide-div">
-                  <img ng-src="{{ productsNew.product.base64 }}" hidden>
+
+                <div class=" image-upload-hide-div">
+                  <div class="thumbnail">
+                    <img ng-src="{{ productsNew.product.base64 }}" >
+                  </div>
                 </div>
 
               </div>

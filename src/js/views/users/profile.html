@@ -19,7 +19,7 @@
     </div>
 
   </div>
-
+  
   <h2>Currently following</h2>
   <div class="col-sm-3">
 
@@ -31,9 +31,7 @@
   <div class="col-sm-3">
     <h3>Features</h3>
     <div class="products-features" ng-repeat="product in usersShow.user.upvoted_items">
-      <h5 ui-sref="featuresShow({ id: feature.id })">{{ product.description }}</h5>
-      {{ featuresShow }}
-      {{ usersShow }}
+      <h5 ui-sref="productsShow({ id: product.id })">{{ product.description }}</h5>
     </div>
   </div>
 
