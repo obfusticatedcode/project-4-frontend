@@ -1,64 +1,59 @@
-### Using this Angular Gulp Setup
+## RESTful app with AngularJS frontend and Ruby on Rails backend.
 
-To get setup with the starter-code, you first need to run:
+###
 
-```sh
-$ bower install && gulp install
-```
 
-## How is gulp setup?
+### Installation and setup
+Download or clone the repo
+`yarn` i to install dependencies
+`gulp` to compile the source code and open in browser
 
-Rather than trying to manage one giant `gulpfile.js` that is file responsible for creating multiple tasks, each task has been broken out into its own file and placed in a directory `tasks`. Any files in that directory get automatically required in the gulpfile using the `require-dir` npm package.
+> **Note**: You'll need to have `gulp-cli` installed globally
+> `npm i -g gulp-cli`
 
-To add a new task, simply add a new task file that directory.
+#### Description
 
-/tasks/default.js specifies the default set of tasks to run
-when you run `gulp`.
+Creating an open space where you can share some of the features you'd like to see in your favourite products. A voting system allows features with most votes to be at the top and the least votes at the bottom.
+I used AngularJS on the front end and Ruby on Rails in the backend. PostgreSQL was a great fit to create models and relationships. To secure the app, I used oauth from Facebook, Github and Instagram to allow the UX to be easy and quick.
+For image upload and storage I used AWS and Carrierwave.
 
-Configuration options are stored in the `package.json` file.
 
-When deploying, ensure that a `postinstall` script has been added to
-your package.json, e.g.
+Screenshots:
+[home-page](http://i.imgur.com/O2ndnuv.png), [products-page](http://i.imgur.com/EzW8ZY1.png), [product-page](http://i.imgur.com/yeP7Ce4.png), [profile-page](http://i.imgur.com/LVyiRrf.png) [feature-request-page](http://i.imgur.com/641zrHj.png), [login-page](http://i.imgur.com/QgDpQfq.png)
 
-```json
-"postinstall": "bower install && gulp deploy"
-```
+Live Demo can be found here: [Demo](https://intense-oasis-59348.herokuapp.com)
 
-This setup expects that there is a bower.json file with at least ONE package
-installed. This will created a bower_components directory after
-the postinstall script has run.
+#### Technologies used
 
-When deploying, this setup expects that the `NODE_ENV` is set to `production`.
-Also that the `NPM_CONFIG_PRODUCTION` is set to `false`. Then you can also set the `API_URL` to be the correct URL for your deployed app. This will automatically replace `http://localhost:3000` to be the correct url.
+- HTML 5
+- SCSS
+- JavaScript ES6
+- AngularJS
+- Ruby (Ruby on rails)
+- JWT
+- PostgreSQL
+- AWS
+- Gulp
+- Yarn
+- NPM
+- Git & Github
+- Heroku
 
-You can do this by running:
+#### Challenges faced
 
-```bash
-$ heroku config:set NODE_ENV=production
-$ heroku config:set NPM_CONFIG_PRODUCTION=false
+Using the AngularJS and Rails stack was challenging at first. Specifically the number of files was intimidating and have to remember when and where to use JS and Ruby.
 
-# An example url
-$ heroku config:set API_URL=https://project-on-heroku.herokuapp.com/
-```
+To overcome this, I focused on the backend using the API only rails app. Then when the API was ready for consumption I started with the frontend. Planning is always key.
 
-### Bower overrides
 
-Sometimes, you might want to `override` the `main` file(s) for a specific Bower component. You can do this directly inside the `bower.json` file like this:
 
-```json
-"overrides": {
-  "bootstrap": {
-    "main": [
-      "dist/css/bootstrap.css",
-      "dist/js/bootstrap.js",
-      "dist/fonts/*"
-    ]
-  },
-  "font-awesome": {
-    "main": [
-      "css/font-awesome.css",
-      "fonts/*"
-    ]
-  }
-},
-```
+#### Conclusion
+Going forward, I'd like to implement the following:
+
+1. Have a natural language IBM Watson API read the sentiment of the users posts and tell product owners the users moods.
+2. Have AI and allow the computer to make clever suggestions based on what the user likes.
+
+
+
+
+[GitHub](https://github.com/obfusticatedcode)
