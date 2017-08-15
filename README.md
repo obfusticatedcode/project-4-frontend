@@ -19,7 +19,7 @@ For image upload and storage I used AWS and Carrierwave.
 
 
 Screenshots:
-[home-page](http://i.imgur.com/O2ndnuv.png), [products-page](http://i.imgur.com/EzW8ZY1.png), [product-page](http://i.imgur.com/yeP7Ce4.png), [profile-page](http://i.imgur.com/LVyiRrf.png) [feature-request-page](http://i.imgur.com/641zrHj.png), [login-page](http://i.imgur.com/QgDpQfq.png)
+[home-page](http://i.imgur.com/O2ndnuv.png), [products-page](http://i.imgur.com/EzW8ZY1.png), [product-page](http://i.imgur.com/yeP7Ce4.png),[feature-request-page](http://i.imgur.com/641zrHj.png), [login-page](http://i.imgur.com/QgDpQfq.png)
 
 Live Demo can be found here: [Demo](https://intense-oasis-59348.herokuapp.com)
 
